@@ -3,374 +3,304 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EstudiaEnChina — De LATAM a una universidad en China</title>
-  <link rel="stylesheet" href="style.css">
+  <title>EstudiaEnChina</title>
   <style>
-    /* ── Page-specific: editorial layout ── */
-    .page-hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-      background: var(--ink);
-      color: var(--white);
-      position: relative;
-      overflow: hidden;
-      padding: 0;
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { font-size:16px; }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.5;
     }
-    .page-hero .container {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: var(--space-xl);
-      align-items: center;
+    a { color: inherit; }
+    /* nav */
+    nav {
+      position: fixed; top:0; left:0; right:0; z-index:99;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.5rem 3rem;
+      mix-blend-mode: difference;
     }
-    @media (max-width: 800px) {
-      .page-hero .container { grid-template-columns: 1fr; }
-    }
-    .page-hero h1 {
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-    }
-    .page-hero h1 .accent {
-      color: var(--vermillion);
-    }
-    .hero-visual {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-visual .glyph {
-      font-size: 14rem;
-      font-weight: 800;
-      color: rgba(194,58,34,0.08);
-      line-height: 1;
-      font-family: var(--font-display);
-      user-select: none;
-    }
-    .hero-visual .glyph-overlay {
-      position: absolute;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--white);
-      background: var(--vermillion);
-      padding: 0.5rem 1rem;
-      bottom: 2rem;
-      right: 0;
-      letter-spacing: 0.05em;
-    }
-    /* Divider with label */
-    .labeled-divider {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: var(--space-lg) 0;
-    }
-    .labeled-divider .line {
-      flex: 1;
-      height: 1px;
-      background: var(--paper-dark);
-    }
-    .labeled-divider .lbl {
-      font-family: var(--font-display);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--stone);
-      white-space: nowrap;
-    }
-    /* Asymmetric content rows */
-    .content-row {
-      display: grid;
-      grid-template-columns: 0.4fr 1fr;
-      gap: var(--space-xl);
-      padding: var(--space-xl) 0;
-      border-bottom: 1px solid var(--paper-dark);
-    }
-    .content-row:last-child { border-bottom: none; }
-    .content-row .col-label {
-      font-family: var(--font-display);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--stone);
-      padding-top: 0.3rem;
-    }
-    @media (max-width: 700px) {
-      .content-row { grid-template-columns: 1fr; gap: var(--space-sm); }
-    }
-    /* Service cards — horizontal, not grid */
-    .service-row {
+    nav a { color: #fff; text-decoration: none; font-size: .85rem; font-weight:500; }
+    nav .logo { font-weight:700; font-size:1rem; letter-spacing:-.02em; }
+    nav .links { display:flex; gap:2rem; }
+    @media(max-width:600px){ nav{padding:1rem 1.5rem;} nav .links{gap:1rem;} nav .links a{font-size:.75rem;} }
+    /* hero */
+    .hero {
+      min-height: 100vh;
+      background: #111;
+      color: #fff;
       display: flex;
       flex-direction: column;
-      gap: 0;
+      justify-content: flex-end;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
     }
-    .service-item {
+    .hero .big-char {
+      position: absolute;
+      top: 50%; right: 5%;
+      transform: translateY(-50%);
+      font-size: clamp(20rem, 40vw, 50rem);
+      font-weight: 700;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 700;
+      line-height: .9;
+      letter-spacing: -.04em;
+      max-width: 700px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: #e63b19;
+    }
+    .hero .sub {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.5);
+      max-width: 400px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero .cta {
+      margin-top: 2.5rem;
+      display: flex; gap: 1rem;
+      position: relative; z-index: 2;
+    }
+    .btn { padding:.9rem 2rem; font-size:.85rem; font-weight:700; border:none; cursor:pointer; text-decoration:none; display:inline-block; letter-spacing:.01em; }
+    .btn-fill { background:#e63b19; color:#fff; }
+    .btn-fill:hover { background:#c43015; }
+    .btn-line { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.3); }
+    .btn-line:hover { border-color:#fff; }
+    /* sections */
+    section { padding: 6rem 3rem; }
+    @media(max-width:600px){ section{padding:4rem 1.5rem;} .hero{padding:2rem 1.5rem;} }
+    /* numbered list */
+    .num-list { list-style:none; max-width:800px; }
+    .num-list li {
       display: grid;
-      grid-template-columns: 60px 1fr auto;
-      gap: var(--space-md);
-      align-items: center;
-      padding: var(--space-md) 0;
-      border-bottom: 1px solid var(--paper-dark);
-      transition: all 0.15s;
-      cursor: pointer;
-      text-decoration: none;
-      color: inherit;
+      grid-template-columns: 80px 1fr;
+      gap: 1.5rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid #e5e5e5;
+      align-items: start;
     }
-    .service-item:last-child { border-bottom: none; }
-    .service-item:hover { padding-left: var(--space-sm); }
-    .service-item .num {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--paper-dark);
+    .num-list li:first-child { border-top: 1px solid #e5e5e5; }
+    .num-list .n {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #ddd;
       line-height: 1;
     }
-    .service-item:hover .num { color: var(--vermillion); }
-    .service-item h3 {
-      font-size: 1.2rem;
-      margin-bottom: 0.2rem;
-    }
-    .service-item p {
-      font-size: 0.9rem;
-      color: var(--stone);
-    }
-    .service-item .arrow {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      color: var(--paper-dark);
-      transition: all 0.15s;
-    }
-    .service-item:hover .arrow {
-      color: var(--vermillion);
-      transform: translateX(4px);
-    }
-    @media (max-width: 600px) {
-      .service-item { grid-template-columns: 40px 1fr; }
-      .service-item .arrow { display: none; }
-    }
-    /* Steps — horizontal bar */
-    .steps-bar {
+    .num-list h3 { font-size: 1.3rem; margin-bottom: .3rem; font-weight:700; }
+    .num-list p { color: #666; font-size: .95rem; }
+    .num-list a { text-decoration:none; }
+    .num-list a:hover h3 { text-decoration: underline; }
+    /* path grid */
+    .paths {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 2px;
-      margin: var(--space-lg) 0;
+      gap: 0;
+      max-width: 1000px;
     }
-    .steps-bar .step-cell {
-      background: var(--white);
-      padding: var(--space-md);
-      text-align: center;
+    @media(max-width:800px){ .paths{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:500px){ .paths{grid-template-columns:1fr;} }
+    .path {
+      padding: 2rem;
+      border: 1px solid #e5e5e5;
+      margin: -1px 0 0 -1px;
+      transition: background .15s;
     }
-    .steps-bar .step-cell .step-num {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--paper-dark);
+    .path:hover { background: #fafafa; }
+    .path .letter {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #eee;
       line-height: 1;
-      margin-bottom: 0.5rem;
+      margin-bottom: .5rem;
     }
-    .steps-bar .step-cell h4 {
-      font-size: 0.95rem;
-      margin-bottom: 0.3rem;
+    .path h4 { font-size: 1rem; margin-bottom: .3rem; }
+    .path p { font-size: .82rem; color: #888; }
+    .path .pills { margin-top: .5rem; display:flex; gap:.3rem; flex-wrap:wrap; }
+    .path .pills span {
+      font-size: .65rem; font-weight: 700; padding: .15rem .5rem;
+      border: 1px solid #ddd; border-radius: 99px; color: #555;
     }
-    .steps-bar .step-cell p {
-      font-size: 0.82rem;
-      color: var(--stone);
+    /* why rows */
+    .why-row {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid #eee;
+      max-width: 700px;
     }
-    @media (max-width: 700px) {
-      .steps-bar { grid-template-columns: repeat(2, 1fr); }
+    .why-row:last-child { border-bottom: none; }
+    .why-row .tag {
+      font-size: .75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .12em; color: #999; padding-top: .2rem;
     }
-    /* Bottom CTA — minimal */
-    .bottom-cta {
-      padding: var(--space-2xl) 0;
+    .why-row h3 { font-size: 1.1rem; margin-bottom: .3rem; }
+    .why-row p { color: #666; font-size: .9rem; }
+    @media(max-width:600px){ .why-row{grid-template-columns:1fr;} }
+    /* contact */
+    .contact-block {
+      background: #111;
+      color: #fff;
+      padding: 6rem 3rem;
       text-align: center;
     }
-    .bottom-cta h2 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: var(--space-sm);
+    .contact-block h2 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -.03em;
+      margin-bottom: 1rem;
     }
-    .bottom-cta .sub {
-      font-size: 1.1rem;
-      color: var(--stone);
-      max-width: 450px;
-      margin: 0 auto var(--space-lg);
+    .contact-block p {
+      color: rgba(255,255,255,.5);
+      max-width: 400px;
+      margin: 0 auto 2rem;
     }
+    .contact-block .btn-fill { font-size: .9rem; padding: 1rem 2.5rem; }
+    /* footer */
+    footer {
+      padding: 2rem 3rem;
+      font-size: .75rem;
+      color: #bbb;
+      border-top: 1px solid #eee;
+    }
+    @media(max-width:600px){ footer{padding:1.5rem;} .contact-block{padding:4rem 1.5rem;} }
   </style>
 </head>
 <body>
-  <!-- Nav — minimal, editorial -->
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="navbar-brand">EstudiaEnChina<span class="dot"></span></a>
-      <ul class="navbar-links">
-        <li><a href="csca-prep.html">CSCA Prep</a></li>
-        <li><a href="rutas.html">Rutas</a></li>
-        <li><a href="aliados.html">Aliados</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-      </ul>
+  <nav>
+    <a href="index.html" class="logo">EstudiaEnChina</a>
+    <div class="links">
+      <a href="csca-prep.html">CSCA Prep</a>
+      <a href="rutas.html">Rutas</a>
+      <a href="aliados.html">Aliados</a>
+      <a href="servicios.html">Servicios</a>
     </div>
   </nav>
 
-  <!-- HERO — asymmetric, editorial -->
-  <section class="page-hero">
-    <div class="container">
+  <section class="hero">
+    <div class="big-char">学</div>
+    <h1>De LATAM<br>a una<br>universidad<br>en <em>China</em></h1>
+    <p class="sub">Preparación CSCA con tutor personalizado. En español. Desde China.</p>
+    <div class="cta">
+      <a href="csca-prep.html" class="btn btn-fill">Hablar con un tutor</a>
+      <a href="rutas.html" class="btn btn-line">Ver rutas</a>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="font-size:2rem; margin-bottom:.5rem; letter-spacing:-.02em;">Servicios</h2>
+    <p style="color:#999; margin-bottom:2rem; font-size:.95rem;">Lo que ofrecemos hoy y lo que viene.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <a href="csca-prep.html"><h3>Preparación CSCA con tutor</h3></a>
+          <p>Sesiones 1-a-1 en línea. Estructurado por ruta de aprendizaje según tu carrera. Nuestro servicio principal.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <a href="rutas.html"><h3>Rutas de aprendizaje</h3></a>
+          <p>¿Qué materias necesitas para tu carrera? Te mostramos las 4 rutas, el temario completo y qué tan largo es el camino.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <a href="servicios.html"><h3>Estudiar en China</h3></a>
+          <p>Aplicación, becas, visa y logística. Acompañamiento completo de principio a fin.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <a href="aliados.html"><h3>Sé nuestro aliado</h3></a>
+          <p>Para escuelas, agencias y universidades que quieren ofrecer CSCA prep a sus estudiantes.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section style="background:#fafafa;">
+    <h2 style="font-size:2rem; margin-bottom:.5rem; letter-spacing:-.02em;">¿Qué necesitas estudiar?</h2>
+    <p style="color:#999; margin-bottom:2rem; font-size:.95rem;">Depende de lo que quieras estudiar en China. Hay 4 rutas posibles.</p>
+    <div class="paths">
+      <a href="rutas.html" class="path">
+        <div class="letter">A</div>
+        <h4>Artes y Negocios</h4>
+        <p>Economía, Derecho, Educación, Idiomas</p>
+        <div class="pills"><span>Chino Human.</span><span>Matemáticas</span></div>
+      </a>
+      <a href="rutas.html" class="path">
+        <div class="letter">B</div>
+        <h4>STEM e Ingeniería</h4>
+        <p>Computación, Ingeniería, IA, Arquitectura</p>
+        <div class="pills"><span>Chino STEM</span><span>Matemáticas</span><span>Física</span></div>
+      </a>
+      <a href="rutas.html" class="path">
+        <div class="letter">C</div>
+        <h4>Medicina y Salud</h4>
+        <p>MBBS, Farmacia, Odontología</p>
+        <div class="pills"><span>Chino STEM</span><span>Matemáticas</span><span>Química</span></div>
+      </a>
+      <a href="rutas.html" class="path">
+        <div class="letter">D</div>
+        <h4>En inglés</h4>
+        <p>Cualquier programa en inglés</p>
+        <div class="pills"><span>Matemáticas</span><span>+Fís/Quím</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2 style="font-size:2rem; margin-bottom:.5rem; letter-spacing:-.02em;">¿Por qué nosotros?</h2>
+    <p style="color:#999; margin-bottom:1rem; font-size:.95rem;">No somos una plataforma genérica.</p>
+    <div class="why-row">
+      <div class="tag">Español</div>
       <div>
-        <div class="hero-badge animate-in">De Latinoamérica a China</div>
-        <h1 class="animate-in delay-1">
-          Tu puente<br>a una<br>universidad<br>en <span class="accent">China</span>
-        </h1>
-        <p class="hero-subtitle animate-in delay-2">
-          Te ayudamos a prepararte para el examen de admisión, elegir tu universidad, aplicar a la beca y llegar a China. Acompañamiento en español, desde LATAM.
-        </p>
-        <div class="hero-cta animate-in delay-3">
-          <a href="csca-prep.html" class="btn btn-primary btn-lg">Hablar con un tutor</a>
-          <a href="rutas.html" class="btn btn-outline btn-lg">Ver rutas de estudio</a>
-        </div>
+        <h3>Todo en tu idioma</h3>
+        <p>Tutoría, documentación, soporte. No necesitas inglés ni chino para empezar.</p>
       </div>
-      <div class="hero-visual animate-in delay-2">
-        <div class="glyph">学</div>
-        <div class="glyph-overlay">XUÉ — estudiar</div>
+    </div>
+    <div class="why-row">
+      <div class="tag">Desde China</div>
+      <div>
+        <h3>Estamos aquí, no allá</h3>
+        <p>Conocemos las universidades, el proceso de admisión y la vida real como estudiantes internacionales.</p>
+      </div>
+    </div>
+    <div class="why-row">
+      <div class="tag">Para LATAM</div>
+      <div>
+        <h3>Pensado para ti</h3>
+        <p>Entendemos el contexto, los horarios y los sueños de los estudiantes latinoamericanos.</p>
       </div>
     </div>
   </section>
 
-  <!-- THE JOURNEY — horizontal steps bar -->
-  <section class="reveal">
-    <div class="container">
-      <div class="labeled-divider">
-        <div class="line"></div>
-        <span class="lbl">El camino</span>
-        <div class="line"></div>
-      </div>
-      <div class="steps-bar">
-        <div class="step-cell">
-          <div class="step-num">01</div>
-          <h4>Elige tu carrera</h4>
-          <p>STEM, Medicina, Negocios o inglés. Eso define tus materias CSCA.</p>
-        </div>
-        <div class="step-cell">
-          <div class="step-num">02</div>
-          <h4>Prepárate</h4>
-          <p>Sesiones con tutor personalizado. Las materias que necesitas, a tu ritmo.</p>
-        </div>
-        <div class="step-cell">
-          <div class="step-num">03</div>
-          <h4>Aplica</h4>
-          <p>Rinde el CSCA, aplica a la universidad, solicita la beca.</p>
-        </div>
-        <div class="step-cell">
-          <div class="step-num">04</div>
-          <h4>Llega a China</h4>
-          <p>Visa, vuelo, adaptación. Ya estás aquí.</p>
-        </div>
-      </div>
-    </div>
+  <section class="contact-block">
+    <h2>¿Listo para empezar?</h2>
+    <p>Agenda una consulta gratuita. Te decimos qué necesitas para llegar a China.</p>
+    <a href="csca-prep.html" class="btn btn-fill">Hablar con un tutor</a>
   </section>
 
-  <!-- SERVICES — horizontal list, not grid of cards -->
-  <section class="reveal">
-    <div class="container">
-      <div class="labeled-divider">
-        <div class="line"></div>
-        <span class="lbl">Servicios</span>
-        <div class="line"></div>
-      </div>
-      <div class="service-row">
-        <a href="csca-prep.html" class="service-item">
-          <div class="num">01</div>
-          <div>
-            <h3>Preparación CSCA con tutor</h3>
-            <p>Sesiones 1-a-1 en línea. Estructurado por ruta de aprendizaje según tu carrera. El servicio principal.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </a>
-        <a href="rutas.html" class="service-item">
-          <div class="num">02</div>
-          <div>
-            <h3>Rutas de aprendizaje</h3>
-            <p>¿Qué materias necesitas? Te mostramos las 4 rutas, el temario completo y qué tan largo es el camino.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </a>
-        <a href="servicios.html" class="service-item">
-          <div class="num">03</div>
-          <div>
-            <h3>Estudiar en China</h3>
-            <p>Aplicación, becas, visa y logística. Acompañamiento completo de principio a fin.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </a>
-        <a href="aliados.html" class="service-item">
-          <div class="num">04</div>
-          <div>
-            <h3>Sé nuestro aliado</h3>
-            <p>Para escuelas, agencias y universidades que quieren ofrecer CSCA prep a sus estudiantes.</p>
-          </div>
-          <div class="arrow">&rarr;</div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHY US — editorial content rows -->
-  <section class="reveal">
-    <div class="container">
-      <div class="labeled-divider">
-        <div class="line"></div>
-        <span class="lbl">Por qué nosotros</span>
-        <div class="line"></div>
-      </div>
-      <div class="content-row">
-        <div class="col-label">Español</div>
-        <div>
-          <h3>Todo en tu idioma</h3>
-          <p>Tutoría, documentación, soporte — todo en español. No necesitas inglés ni chino para empezar. La información oficial sobre la CSCA está en chino e inglés; nosotros la ponemos en tu idioma.</p>
-        </div>
-      </div>
-      <div class="content-row">
-        <div class="col-label">Desde China</div>
-        <div>
-          <h3>Estamos aquí, no allá</h3>
-          <p>Conocemos las universidades, el proceso de admisión, las becas y la vida real como estudiantes internacionales. Sabemos qué universidades buscan qué perfiles y qué errores evitar.</p>
-        </div>
-      </div>
-      <div class="content-row">
-        <div class="col-label">Para LATAM</div>
-        <div>
-          <h3>Pensado para ti</h3>
-          <p>No somos una plataforma genérica para todo el mundo. Entendemos el contexto, los horarios, los desafíos y los sueños de los estudiantes latinoamericanos que quieren llegar a China.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA — minimal, editorial -->
-  <section class="reveal">
-    <div class="container">
-      <div class="bottom-cta">
-        <h2>¿Listo para empezar?</h2>
-        <p class="sub">Agenda una consulta gratuita. Te decimos exactamente qué necesitas para llegar a China.</p>
-        <a href="csca-prep.html" class="btn btn-primary btn-lg">Hablar con un tutor</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. Plataforma independiente — no afiliada al CSC ni a csca.cn.</p>
-    </div>
+  <footer>
+    <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs</p>
   </footer>
-
-  <script>
-  document.querySelectorAll('.reveal').forEach(el => {
-    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
-    io.observe(el);
-  });
-  </script>
 </body>
 </html>
