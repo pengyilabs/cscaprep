@@ -28,13 +28,15 @@
     @media(max-width:600px){ nav{padding:1rem 1.5rem;} nav .links{gap:1rem;} nav .links a{font-size:.75rem;} }
     /* hero */
     .hero {
-      min-height: 100vh;
+      min-height: auto;
       background: #111;
       color: #fff;
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 3rem;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 8rem 3rem 4rem;
       position: relative;
       overflow: hidden;
     }
@@ -42,19 +44,20 @@
       position: absolute;
       top: 50%; right: 5%;
       transform: translateY(-50%);
-      font-size: clamp(20rem, 40vw, 50rem);
+      font-size: clamp(8rem, 15vw, 15rem);
       font-weight: 700;
-      color: rgba(255,255,255,0.03);
+      color: rgba(255,255,255,0.02);
       line-height: 1;
       pointer-events: none;
       user-select: none;
     }
     .hero h1 {
-      font-size: clamp(3rem, 8vw, 7rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       font-weight: 700;
-      line-height: .9;
-      letter-spacing: -.04em;
-      max-width: 700px;
+      line-height: 1.2;
+      letter-spacing: -.03em;
+      max-width: 900px;
+      margin: 0 auto;
       position: relative;
       z-index: 2;
     }
@@ -63,10 +66,11 @@
       color: #e63b19;
     }
     .hero .sub {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       font-size: 1.1rem;
       color: rgba(255,255,255,0.5);
-      max-width: 400px;
+      max-width: 600px;
+      margin: 1.5rem auto 0;
       position: relative;
       z-index: 2;
     }
@@ -74,17 +78,46 @@
       margin-top: 2.5rem;
       display: flex; gap: 1rem;
       position: relative; z-index: 2;
+      justify-content: center;
+      flex-wrap: wrap;
     }
     .btn { padding:.9rem 2rem; font-size:.85rem; font-weight:700; border:none; cursor:pointer; text-decoration:none; display:inline-block; letter-spacing:.01em; }
     .btn-fill { background:#e63b19; color:#fff; }
     .btn-fill:hover { background:#c43015; }
     .btn-line { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,.3); }
     .btn-line:hover { border-color:#fff; }
+    /* hero summary */
+    .hero-summary {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      padding: 1.5rem 3rem;
+      background: #f7f7f7;
+      border-bottom: 1px solid #eee;
+      flex-wrap: wrap;
+    }
+    .hero-summary span {
+      font-size: .85rem;
+      font-weight: 500;
+      color: #555;
+    }
     /* sections */
     section { padding: 6rem 3rem; }
-    @media(max-width:600px){ section{padding:4rem 1.5rem;} .hero{padding:2rem 1.5rem;} }
+    section h2 {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: .5rem;
+      text-align: center;
+    }
+    .sub-head {
+      color: #999;
+      margin-bottom: 2rem;
+      font-size: .95rem;
+      text-align: center;
+    }
     /* numbered list */
-    .num-list { list-style:none; max-width:800px; }
+    .num-list { list-style:none; max-width:800px; margin: 0 auto; }
     .num-list li {
       display: grid;
       grid-template-columns: 80px 1fr;
@@ -110,6 +143,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 0;
       max-width: 1000px;
+      margin: 0 auto;
     }
     @media(max-width:800px){ .paths{grid-template-columns:repeat(2,1fr);} }
     @media(max-width:500px){ .paths{grid-template-columns:1fr;} }
@@ -142,6 +176,7 @@
       padding: 2rem 0;
       border-bottom: 1px solid #eee;
       max-width: 700px;
+      margin: 0 auto;
     }
     .why-row:last-child { border-bottom: none; }
     .why-row .tag {
@@ -159,10 +194,11 @@
       text-align: center;
     }
     .contact-block h2 {
-      font-size: clamp(2rem, 5vw, 4rem);
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
       font-weight: 700;
       letter-spacing: -.03em;
       margin-bottom: 1rem;
+      text-align: center;
     }
     .contact-block p {
       color: rgba(255,255,255,.5);
@@ -177,7 +213,14 @@
       color: #bbb;
       border-top: 1px solid #eee;
     }
-    @media(max-width:600px){ footer{padding:1.5rem;} .contact-block{padding:4rem 1.5rem;} }
+    @media(max-width:600px){
+      section{padding:4rem 1.5rem;}
+      .hero{padding:5rem 1.5rem 3rem;}
+      footer{padding:1.5rem;}
+      .contact-block{padding:4rem 1.5rem;}
+      .hero-summary{padding:1rem 1.5rem;gap:1rem;}
+      .hero-summary span{font-size:.75rem;}
+    }
   </style>
 </head>
 <body>
@@ -201,9 +244,15 @@
     </div>
   </section>
 
+  <div class="hero-summary">
+    <span>✓ Preparación CSCA en español</span>
+    <span>✓ Tutor personalizado desde China</span>
+    <span>✓ 4 rutas según tu carrera</span>
+  </div>
+
   <section>
-    <h2 style="font-size:2rem; margin-bottom:.5rem; letter-spacing:-.02em;">Servicios</h2>
-    <p style="color:#999; margin-bottom:2rem; font-size:.95rem;">Lo que ofrecemos hoy y lo que viene.</p>
+    <h2>Servicios</h2>
+    <p class="sub-head">Lo que ofrecemos hoy y lo que viene.</p>
     <ul class="num-list">
       <li>
         <span class="n">01</span>
@@ -237,8 +286,8 @@
   </section>
 
   <section style="background:#fafafa;">
-    <h2 style="font-size:2rem; margin-bottom:.5rem; letter-spacing:-.02em;">¿Qué necesitas estudiar?</h2>
-    <p style="color:#999; margin-bottom:2rem; font-size:.95rem;">Depende de lo que quieras estudiar en China. Hay 4 rutas posibles.</p>
+    <h2>¿Qué necesitas estudiar?</h2>
+    <p class="sub-head">Depende de lo que quieras estudiar en China. Hay 4 rutas posibles.</p>
     <div class="paths">
       <a href="rutas.html" class="path">
         <div class="letter">A</div>
@@ -268,8 +317,8 @@
   </section>
 
   <section>
-    <h2 style="font-size:2rem; margin-bottom:.5rem; letter-spacing:-.02em;">¿Por qué nosotros?</h2>
-    <p style="color:#999; margin-bottom:1rem; font-size:.95rem;">No somos una plataforma genérica.</p>
+    <h2>¿Por qué nosotros?</h2>
+    <p class="sub-head">No somos una plataforma genérica.</p>
     <div class="why-row">
       <div class="tag">Español</div>
       <div>
