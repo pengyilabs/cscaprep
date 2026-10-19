@@ -3,205 +3,231 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSCA Prep — Plataforma de Preparación para la CSCA</title>
+  <title>CSCA Prep — Preparación para el Examen CSCA en Español</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navbar -->
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="navbar-brand"><span class="dot"></span>CSCA Prep</a>
       <ul class="navbar-links">
-        <li><a href="#opciones">Opciones</a></li>
-        <li><a href="#como-funciona">Cómo funciona</a></li>
-        <li><a href="#por-que">Por qué nosotros</a></li>
+        <li><a href="#que-es">Qué es la CSCA</a></li>
+        <li><a href="#rutas">Elige tu ruta</a></li>
+        <li><a href="#servicios">Servicios</a></li>
         <li><a href="#contacto" class="btn btn-primary btn-sm">Empezar gratis</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- HERO — What is CSCA + who are we -->
   <section class="hero dark">
     <div class="hero-pattern"></div>
     <div class="container">
-      <div class="hero-badge animate-in">Preparación CSCA en español</div>
-      <h1 class="animate-in delay-1">Tu camino a una<br>universidad en China<br>empieza aquí</h1>
+      <div class="hero-badge animate-in">Primera plataforma CSCA en español</div>
+      <h1 class="animate-in delay-1">Tu puerta de entrada<br>a una universidad en China</h1>
       <p class="hero-subtitle animate-in delay-2">
-        La primera plataforma de preparación para el examen CSCA diseñada para estudiantes de Latinoamérica.
-        Contenido, simulacros y seguimiento — todo en español.
+        La CSCA es el examen de admisión obligatorio para pregrado en China. Nosotros te preparamos con contenido en español, simulacros y acompañamiento — desde LATAM.
       </p>
       <div class="hero-cta animate-in delay-3">
-        <a href="opcion-a.html" class="btn btn-primary btn-lg">Ver opciones</a>
-        <a href="#como-funciona" class="btn btn-outline btn-lg">Cómo funciona</a>
+        <a href="#rutas" class="btn btn-primary btn-lg">¿Qué ruta necesito?</a>
+        <a href="#que-es" class="btn btn-outline btn-lg">Entender la CSCA</a>
       </div>
     </div>
   </section>
 
-  <!-- Stats -->
-  <section class="section">
-    <div class="container">
-      <div class="stats-bar">
-        <div class="stat-item text-center">
-          <div class="stat-value">5</div>
-          <div class="stat-label">Materias del examen</div>
-        </div>
-        <div class="stat-item text-center">
-          <div class="stat-value">300+</div>
-          <div class="stat-label">Universidades reconocen CSCA</div>
-        </div>
-        <div class="stat-item text-center">
-          <div class="stat-value">6</div>
-          <div class="stat-label">Sesiones al año</div>
-        </div>
-        <div class="stat-item text-center">
-          <div class="stat-value">4</div>
-          <div class="stat-label">Rutas de aprendizaje</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What is CSCA -->
-  <section class="section" id="como-funciona" style="background: var(--white);">
+  <!-- WHAT IS CSCA — quick explainer -->
+  <section class="section" id="que-es" style="background:var(--white);">
     <div class="container">
       <div class="section-header">
-        <div class="label">Qué es la CSCA</div>
-        <h2>El examen de admisión para universidades chinas</h2>
+        <div class="label">La CSCA explicada en 60 segundos</div>
+        <h2>¿Qué es la CSCA y por qué me importa?</h2>
       </div>
       <div class="grid-3">
-        <div class="card animate-in delay-1">
+        <div class="card">
           <div class="card-icon coral">📋</div>
-          <h4>Examen estandarizado</h4>
-          <p class="mt-sm">5 materias, formato de opción múltiple, puntuación de 0 a 100 por materia. Disponible en inglés y chino.</p>
+          <h4>Examen de admisión para pregrado</h4>
+          <p class="mt-sm">5 materias, todo opción múltiple. Matemáticas es obligatoria para todos; las demás dependen de tu carrera.</p>
         </div>
-        <div class="card animate-in delay-2">
-          <div class="card-icon gold">🎓</div>
-          <h4>Obligatorio desde 2026</h4>
-          <p class="mt-sm">Requerido para becas CSC; se espera obligatorio para todos los aspirantes internacionales de pregrado para 2028.</p>
+        <div class="card">
+          <div class="card-icon gold">🏛️</div>
+          <h4>Lo exigen 300+ universidades</h4>
+          <p class="mt-sm">Obligatorio para becas CSC desde 2026. Se espera que sea obligatorio para TODOS los aspirantes internacionales hacia 2028.</p>
         </div>
-        <div class="card animate-in delay-3">
-          <div class="card-icon navy">🌏</div>
-          <h4>En línea desde casa</h4>
-          <p class="mt-sm">Supervisado en tiempo real con dos dispositivos. Sin necesidad de viajar a un centro de examen.</p>
+        <div class="card">
+          <div class="card-icon navy">💻</div>
+          <h4>Lo rindes desde casa</h4>
+          <p class="mt-sm">En línea, supervisado con dos dispositivos, 6 sesiones al año. Sin necesidad de viajar.</p>
         </div>
+      </div>
+
+      <!-- The 5 subjects -->
+      <div style="margin-top:var(--space-xl);">
+        <h3 class="text-center mb-md">Las 5 materias del examen</h3>
+        <div class="grid-4" style="grid-template-columns: repeat(5, 1fr);">
+          <div class="card text-center" style="padding:var(--space-md);">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">📐</div>
+            <h4 style="font-size:0.95rem;">Matemáticas</h4>
+            <p style="font-size:0.8rem;margin-top:0.3rem;">48 preguntas · 60 min<br>Obligatoria para TODOS</p>
+          </div>
+          <div class="card text-center" style="padding:var(--space-md);">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">⚡</div>
+            <h4 style="font-size:0.95rem;">Física</h4>
+            <p style="font-size:0.8rem;margin-top:0.3rem;">48 preguntas · 60 min<br>STEM, ingeniería, medicina</p>
+          </div>
+          <div class="card text-center" style="padding:var(--space-md);">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">🧪</div>
+            <h4 style="font-size:0.95rem;">Química</h4>
+            <p style="font-size:0.8rem;margin-top:0.3rem;">48 preguntas · 60 min<br>Medicina, farmacia, salud</p>
+          </div>
+          <div class="card text-center" style="padding:var(--space-md);">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">📖</div>
+            <h4 style="font-size:0.95rem;">Chino STEM</h4>
+            <p style="font-size:0.8rem;margin-top:0.3rem;">80 preguntas · 90 min<br>Carreras técnicas en chino</p>
+          </div>
+          <div class="card text-center" style="padding:var(--space-md);">
+            <div style="font-size:2rem;margin-bottom:0.5rem;">📝</div>
+            <h4 style="font-size:0.95rem;">Chino Humanidades</h4>
+            <p style="font-size:0.8rem;margin-top:0.3rem;">80 preguntas · 90 min<br>Carreras de letras en chino</p>
+          </div>
+        </div>
+        <p class="text-center text-slate mt-md" style="font-size:0.9rem;">
+          Matemáticas, Física y Química se pueden rendir en inglés o chino. Las materias de chino solo están en chino.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- The 4 options -->
-  <section class="section" id="opciones">
+  <!-- PATH SELECTOR — the key differentiator -->
+  <section class="section" id="rutas">
     <div class="container">
       <div class="section-header">
-        <div class="label">Nuestras opciones</div>
-        <h2>Elige cómo quieres prepararte</h2>
-        <p class="mt-sm">Cuatro modelos pensados para distintos presupuestos, tiempos y objetivos.</p>
+        <div class="label">¿Qué materias necesito?</div>
+        <h2>Depende de lo que quieras estudiar</h2>
+        <p class="mt-sm">Cada carrera requiere materias distintas. Elige tu ruta para ver exactamente qué necesitas preparar.</p>
       </div>
       <div class="grid-2">
-
-        <!-- Option A -->
-        <a href="opcion-a.html" class="card" style="cursor:pointer;">
-          <div class="card-icon coral">🔓</div>
-          <h3>Opción A — Freemium por materia</h3>
-          <p class="mt-sm">Diagnóstico gratuito. Desbloquea Matemáticas, Física o Química por separado. Ideal para empezar sin compromiso.</p>
-          <p class="mt-sm text-coral" style="font-weight:600;">Desde $9.99 USD / materia &rarr;</p>
+        <a href="opcion-b.html" class="path-card">
+          <div class="path-letter" style="color:var(--coral);">A</div>
+          <h3>Artes y Negocios</h3>
+          <p class="mt-sm text-slate">Economía, Derecho, Educación, Idiomas, Periodismo, Administración</p>
+          <div class="path-subjects">
+            <span class="pill" style="background:var(--coral-glow);color:var(--coral);">Chino Humanidades</span>
+            <span class="pill" style="background:var(--gold-light);color:var(--gold);">Matemáticas</span>
+          </div>
+          <p class="mt-md text-coral" style="font-weight:600;">120–170 h · Ver ruta completa &rarr;</p>
         </a>
-
-        <!-- Option B -->
-        <a href="opcion-b.html" class="card" style="cursor:pointer;">
-          <div class="card-icon gold">📦</div>
-          <h3>Opción B — Ruta completa</h3>
-          <p class="mt-sm">Todas las materias que necesitas según tu carrera: estructura, simulacros y seguimiento. Mejor valor por estudiante comprometido.</p>
-          <p class="mt-sm text-coral" style="font-weight:600;">$79 – $149 USD / ruta &rarr;</p>
+        <a href="opcion-b.html" class="path-card">
+          <div class="path-letter" style="color:var(--gold);">B</div>
+          <h3>STEM e Ingeniería</h3>
+          <p class="mt-sm text-slate">Computación, Ingeniería, IA, Ciencia de datos, Arquitectura</p>
+          <div class="path-subjects">
+            <span class="pill" style="background:var(--coral-glow);color:var(--coral);">Chino STEM</span>
+            <span class="pill" style="background:var(--gold-light);color:var(--gold);">Matemáticas</span>
+            <span class="pill" style="background:rgba(11,29,58,0.06);color:var(--navy);">Física</span>
+          </div>
+          <p class="mt-md text-coral" style="font-weight:600;">150–220 h · Ver ruta completa &rarr;</p>
         </a>
-
-        <!-- Option C -->
-        <a href="opcion-c.html" class="card" style="cursor:pointer;">
-          <div class="card-icon green">🇨🇳</div>
-          <h3>Opción C — Estudiar en China</h3>
-          <p class="mt-sm">Preparación CSCA + apoyo completo para la admisión universitaria: becas, visa, documentos y elección de universidad.</p>
-          <p class="mt-sm text-coral" style="font-weight:600;">$299 – $499 USD &rarr;</p>
+        <a href="opcion-b.html" class="path-card">
+          <div class="path-letter" style="color:var(--success);">C</div>
+          <h3>Medicina y Salud</h3>
+          <p class="mt-sm text-slate">MBBS, Medicina clínica, Farmacia, Odontología, Enfermería</p>
+          <div class="path-subjects">
+            <span class="pill" style="background:var(--coral-glow);color:var(--coral);">Chino STEM</span>
+            <span class="pill" style="background:var(--gold-light);color:var(--gold);">Matemáticas</span>
+            <span class="pill" style="background:var(--success-bg);color:var(--success);">Química</span>
+            <span class="pill" style="background:rgba(11,29,58,0.06);color:var(--navy);">Física (opcional)</span>
+          </div>
+          <p class="mt-md text-coral" style="font-weight:600;">160–240 h · Ver ruta completa &rarr;</p>
         </a>
-
-        <!-- Option D -->
-        <a href="opcion-d.html" class="card" style="cursor:pointer;">
-          <div class="card-icon navy">🏫</div>
-          <h3>Opción D — B2B institucional</h3>
-          <p class="mt-sm">Licencia del LMS para escuelas, agencias y universidades. Consola propia, precios por estudiante, marca blanca.</p>
-          <p class="mt-sm text-coral" style="font-weight:600;">Desde $50 USD / estudiante / año &rarr;</p>
+        <a href="opcion-b.html" class="path-card">
+          <div class="path-letter" style="color:var(--navy-light);">D</div>
+          <h3>Programas en inglés</h3>
+          <p class="mt-sm text-slate">Cualquier programa dictado en inglés — la ruta más corta</p>
+          <div class="path-subjects">
+            <span class="pill" style="background:var(--gold-light);color:var(--gold);">Matemáticas</span>
+            <span class="pill" style="background:rgba(11,29,58,0.06);color:var(--navy);">+ Física / Química</span>
+          </div>
+          <p class="mt-md text-coral" style="font-weight:600;">40–120 h · Ver ruta completa &rarr;</p>
         </a>
-
       </div>
     </div>
   </section>
 
-  <!-- Why us -->
-  <section class="section dark" id="por-que">
+  <!-- SERVICES — the 4 distinct offers -->
+  <section class="section dark" id="servicios">
     <div class="container">
       <div class="section-header">
-        <div class="label" style="color:var(--coral-light);">Por qué elegirnos</div>
-        <h2 class="text-white">Diseñado para LATAM,<br>respaldado por datos</h2>
+        <div class="label" style="color:var(--coral-light);">Nuestros servicios</div>
+        <h2 class="text-white">Elige cómo quieres prepararte</h2>
+        <p class="mt-sm">No somos un solo producto. Somos 4 servicios distintos para distintas necesidades.</p>
       </div>
-      <div class="grid-3">
-        <div class="card" style="background:var(--navy-mid);border-color:rgba(255,255,255,0.06);">
-          <h4 class="text-white">🇪🇸 Todo en español</h4>
-          <p class="mt-sm">Interfaz, lecciones, simulacros y soporte — todo en tu idioma. Traducción profesional, no automática.</p>
-        </div>
-        <div class="card" style="background:var(--navy-mid);border-color:rgba(255,255,255,0.06);">
-          <h4 class="text-white">📊 Contenido verificado</h4>
-          <p class="mt-sm">Banco de preguntas calibrado contra sesiones reales del examen. 95% de cobertura de temas.</p>
-        </div>
-        <div class="card" style="background:var(--navy-mid);border-color:rgba(255,255,255,0.06);">
-          <h4 class="text-white">🗺️ Rutas de aprendizaje</h4>
-          <p class="mt-sm">No solo preguntas: estructura completa según tu carrera (STEM, Medicina, Humanidades, Inglés).</p>
-        </div>
+      <div class="grid-2">
+        <a href="opcion-a.html" class="card" style="background:var(--navy-mid);border-color:rgba(255,255,255,0.06);">
+          <h3 class="text-white">🅰️ Banco de preguntas por materia</h3>
+          <p class="mt-sm">Practica a tu ritmo. Desbloquea solo la materia que necesitas. Diagnóstico gratis, simulacros cronometrados, repetición espaciada. Para estudiantes con presupuesto limitado o que solo necesitan una materia.</p>
+          <p class="mt-sm" style="color:var(--coral-light);font-weight:600;">Desde $0 (gratis) · $14.99 por materia &rarr;</p>
+        </a>
+        <a href="opcion-b.html" class="card" style="background:var(--navy-mid);border-color:rgba(255,255,255,0.06);">
+          <h3 class="text-white">📦 Ruta de aprendizaje completa</h3>
+          <p class="mt-sm">No solo preguntas: una ruta estructurada con fundamentos, práctica, simulacros y seguimiento. Todo lo que necesitas según tu carrera, en el orden correcto. Para estudiantes comprometidos que quieren la mejor preparación.</p>
+          <p class="mt-sm" style="color:var(--coral-light);font-weight:600;">$14.99 – $149 según ruta &rarr;</p>
+        </a>
+        <a href="opcion-c.html" class="card" style="background:var(--navy-mid);border-color:rgba(255,255,255,0.06);">
+          <h3 class="text-white">🇨🇳 Estudiar en China — servicio completo</h3>
+          <p class="mt-sm">Preparación CSCA + asesoría para la admisión: elección de universidad, becas, documentos, visa y logística. Un asesor personal te guía de principio a fin. Para quienes quieren ir a China pero no saben por dónde empezar.</p>
+          <p class="mt-sm" style="color:var(--coral-light);font-weight:600;">$299 – $499 por servicio &rarr;</p>
+        </a>
+        <a href="opcion-d.html" class="card" style="background:var(--navy-mid);border-color:rgba(255,255,255,0.06);">
+          <h3 class="text-white">🏫 Plataforma para instituciones</h3>
+          <p class="mt-sm">Licencia nuestra plataforma con tu marca. Consola administrativa, reportes, API. Para escuelas, agencias y universidades que quieren ofrecer preparación CSCA a sus estudiantes sin desarrollar contenido propio.</p>
+          <p class="mt-sm" style="color:var(--coral-light);font-weight:600;">Desde $50 por estudiante/año &rarr;</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Paths overview -->
+  <!-- WHY US -->
   <section class="section" style="background:var(--white);">
     <div class="container">
       <div class="section-header">
-        <div class="label">Rutas de aprendizaje</div>
-        <h2>La ruta correcta para cada carrera</h2>
+        <div class="label">Por qué nosotros</div>
+        <h2>Diseñado para LATAM,<br>no traducido al español</h2>
       </div>
-      <div class="grid-2">
-        <div class="card">
-          <h4>🅰️ Ruta A — Artes y Negocios</h4>
-          <p class="mt-sm text-slate">Chino Humanidades + Matemáticas</p>
-          <p class="mt-sm">Para: Economía, Derecho, Educación, Idiomas, Periodismo</p>
+      <div class="feature-split">
+        <div>
+          <h3>No competimos con lo gratis — competimos con lo que falta</h3>
+          <p class="mt-sm">Ya hay plataformas gratuitas en inglés con buen contenido. Lo que no hay es una experiencia completa en español: estructura de ruta, seguimiento, guía de admisión y soporte en tu idioma.</p>
+          <ul class="checklist mt-md">
+            <li><span class="icon" style="background:var(--coral-glow);color:var(--coral);">&#10003;</span> Todo el contenido y la interfaz en español profesional</li>
+            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">&#10003;</span> Rutas de aprendizaje por carrera, no solo preguntas sueltas</li>
+            <li><span class="icon" style="background:var(--success-bg);color:var(--success);">&#10003;</span> Guía de admisión, becas y visa — no solo exámenes</li>
+            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--navy);">&#10003;</span> Soporte por WhatsApp en español</li>
+          </ul>
         </div>
-        <div class="card">
-          <h4>🅱️ Ruta B — STEM e Ingeniería</h4>
-          <p class="mt-sm text-slate">Chino STEM + Matemáticas + Física</p>
-          <p class="mt-sm">Para: Computación, Ingeniería, IA, Ciencia de datos</p>
-        </div>
-        <div class="card">
-          <h4>🅲 Ruta C — Medicina</h4>
-          <p class="mt-sm text-slate">Chino STEM + Matemáticas + Química (+ Física)</p>
-          <p class="mt-sm">Para: MBBS, Medicina clínica, Farmacia, Odontología</p>
-        </div>
-        <div class="card">
-          <h4>🅳 Ruta D — Programas en inglés</h4>
-          <p class="mt-sm text-slate">Matemáticas (+ Física / Química según carrera)</p>
-          <p class="mt-sm">Para: cualquier programa dictado en inglés</p>
+        <div style="text-align:center;">
+          <div style="background:var(--coral-glow);border-radius:var(--radius-lg);padding:var(--space-xl);display:inline-block;">
+            <div class="big-stat">
+              <div class="number" style="color:var(--coral);">95%</div>
+              <div class="unit">cobertura de temas</div>
+            </div>
+            <p style="font-size:0.85rem;margin-top:var(--space-sm);max-width:260px;">Banco de preguntas calibrado contra 5 sesiones reales del examen (dic 2025 – jun 2026)</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section">
+  <section class="section" id="contacto">
     <div class="container">
       <div class="cta-banner">
-        <h2>Empieza hoy con un diagnóstico gratuito</h2>
-        <p>15 minutos. Sin tarjeta. Sabrás exactamente dónde estás y qué necesitas estudiar.</p>
-        <a href="opcion-a.html" class="btn btn-primary btn-lg">Hacer diagnóstico gratis</a>
+        <h2>Empieza con un diagnóstico gratuito</h2>
+        <p>15 minutos. Sin tarjeta. Sabrás exactamente qué tan lejos estás del puntaje que necesitas.</p>
+        <a href="opcion-a.html" class="btn btn-primary btn-lg">Hacer diagnóstico ahora</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container text-center">
       <p>CSCA Prep &copy; 2026 Pengyi Labs. Plataforma independiente — no afiliada al CSC ni a csca.cn.</p>
