@@ -20,7 +20,6 @@
 
   <!-- HERO -->
   <section class="hero dark">
-    <div class="hero-pattern"></div>
     <div class="container">
       <div class="grid-2" style="align-items:center;gap:var(--space-xl);">
         <div>
@@ -47,8 +46,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- THE SERVICE -->
-  <section class="section" id="servicio" style="background:var(--white);">
+  <section class="section reveal" id="servicio" style="background:var(--white);">
     <div class="container">
       <div class="section-header">
         <div class="label">El servicio</div>
@@ -95,8 +96,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- WHAT YOU GET -->
-  <section class="section">
+  <section class="section reveal">
     <div class="container">
       <div class="section-header">
         <div class="label">Lo que recibes</div>
@@ -123,8 +126,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- CTA -->
-  <section class="section" id="contacto" style="background:var(--white);">
+  <section class="section reveal" id="contacto" style="background:var(--white);">
     <div class="container">
       <div class="cta-banner">
         <h2>Tu viaje a China empieza con una conversación</h2>
@@ -139,5 +144,12 @@
       <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. <a href="index.html">Volver al inicio</a></p>
     </div>
   </footer>
+
+  <script>
+  document.querySelectorAll('.reveal').forEach(el => {
+    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
+    io.observe(el);
+  });
+  </script>
 </body>
 </html>

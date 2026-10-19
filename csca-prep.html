@@ -21,7 +21,6 @@
 
   <!-- HERO — Personal, tutor-led -->
   <section class="hero dark">
-    <div class="hero-pattern"></div>
     <div class="container">
       <div class="grid-2" style="align-items:center;gap:var(--space-xl);">
         <div>
@@ -53,8 +52,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- HOW IT WORKS -->
-  <section class="section" id="como-funciona" style="background:var(--white);">
+  <section class="section reveal" id="como-funciona" style="background:var(--white);">
     <div class="container">
       <div class="section-header">
         <div class="label">Cómo funciona</div>
@@ -80,8 +81,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- WHAT YOU GET -->
-  <section class="section">
+  <section class="section reveal">
     <div class="container">
       <div class="section-header">
         <div class="label">Qué incluye</div>
@@ -109,8 +112,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- SUBJECTS AVAILABLE -->
-  <section class="section dark">
+  <section class="section dark reveal">
     <div class="container">
       <div class="section-header">
         <div class="label" style="color:var(--coral-light);">Materias disponibles</div>
@@ -149,8 +154,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- PRICING -->
-  <section class="section" style="background:var(--white);">
+  <section class="section reveal" style="background:var(--white);">
     <div class="container">
       <div class="section-header">
         <div class="label">Precio</div>
@@ -203,8 +210,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- CTA -->
-  <section class="section" id="contacto">
+  <section class="section reveal" id="contacto">
     <div class="container">
       <div class="cta-banner">
         <h2>Empieza con una sesión de prueba gratis</h2>
@@ -219,5 +228,12 @@
       <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. <a href="index.html">Volver al inicio</a></p>
     </div>
   </footer>
+
+  <script>
+  document.querySelectorAll('.reveal').forEach(el => {
+    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
+    io.observe(el);
+  });
+  </script>
 </body>
 </html>

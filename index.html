@@ -21,7 +21,6 @@
 
   <!-- HERO — The big picture -->
   <section class="hero dark">
-    <div class="hero-pattern"></div>
     <div class="container">
       <div class="hero-badge animate-in">De Latinoamérica a China</div>
       <h1 class="animate-in delay-1">Tu puente a una<br>universidad en China</h1>
@@ -35,8 +34,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- THE JOURNEY — what we help with -->
-  <section class="section" style="background:var(--white);">
+  <section class="section reveal" style="background:var(--white);">
     <div class="container">
       <div class="section-header">
         <div class="label">El camino</div>
@@ -68,8 +69,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- SERVICES — what we offer -->
-  <section class="section" id="servicios">
+  <section class="section reveal" id="servicios">
     <div class="container">
       <div class="section-header">
         <div class="label">Nuestros servicios</div>
@@ -107,8 +110,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- WHY US -->
-  <section class="section dark">
+  <section class="section dark reveal">
     <div class="container">
       <div class="section-header">
         <div class="label" style="color:var(--coral-light);">¿Por qué nosotros?</div>
@@ -131,8 +136,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- CTA -->
-  <section class="section">
+  <section class="section reveal">
     <div class="container">
       <div class="cta-banner">
         <h2>¿Listo para dar el primer paso?</h2>
@@ -147,5 +154,12 @@
       <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. Plataforma independiente — no afiliada al CSC ni a csca.cn.</p>
     </div>
   </footer>
+
+  <script>
+  document.querySelectorAll('.reveal').forEach(el => {
+    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
+    io.observe(el);
+  });
+  </script>
 </body>
 </html>

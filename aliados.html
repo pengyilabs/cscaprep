@@ -20,7 +20,6 @@
 
   <!-- HERO -->
   <section class="hero dark">
-    <div class="hero-pattern"></div>
     <div class="container">
       <div class="hero-badge animate-in">Programa de alianzas</div>
       <h1 class="animate-in delay-1">Ofrece preparación CSCA<br>a tus estudiantes</h1>
@@ -34,8 +33,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- WHO IT'S FOR -->
-  <section class="section" style="background:var(--white);">
+  <section class="section reveal" style="background:var(--white);">
     <div class="container">
       <div class="section-header">
         <div class="label">Para quién es</div>
@@ -61,8 +62,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- THE PROGRAM -->
-  <section class="section" id="programa">
+  <section class="section reveal" id="programa">
     <div class="container">
       <div class="section-header">
         <div class="label">El programa</div>
@@ -104,8 +107,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- VALUE -->
-  <section class="section dark">
+  <section class="section dark reveal">
     <div class="container">
       <div class="section-header">
         <div class="label" style="color:var(--coral-light);">Valor para tu institución</div>
@@ -128,8 +133,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- CTA -->
-  <section class="section" id="contacto" style="background:var(--white);">
+  <section class="section reveal" id="contacto" style="background:var(--white);">
     <div class="container">
       <div class="cta-banner">
         <h2>Hablemos sobre una alianza</h2>
@@ -144,5 +151,12 @@
       <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. <a href="index.html">Volver al inicio</a></p>
     </div>
   </footer>
+
+  <script>
+  document.querySelectorAll('.reveal').forEach(el => {
+    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
+    io.observe(el);
+  });
+  </script>
 </body>
 </html>

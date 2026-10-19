@@ -21,7 +21,6 @@
 
   <!-- HERO -->
   <section class="hero dark">
-    <div class="hero-pattern"></div>
     <div class="container">
       <div class="hero-badge animate-in">Guía informativa</div>
       <h1 class="animate-in delay-1">¿Qué necesitas estudiar<br>para tu carrera?</h1>
@@ -35,8 +34,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- QUICK OVERVIEW -->
-  <section class="section" style="background:var(--white);">
+  <section class="section reveal" style="background:var(--white);">
     <div class="container">
       <div class="section-header">
         <div class="label">Vista rápida</div>
@@ -75,8 +76,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- THE 4 ROUTES -->
-  <section class="section" id="rutas">
+  <section class="section reveal" id="rutas">
     <div class="container">
       <div class="section-header">
         <div class="label">Las 4 rutas</div>
@@ -180,8 +183,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- DETAILED SYLLABUS -->
-  <section class="section" id="temario" style="background:var(--white);">
+  <section class="section reveal" id="temario" style="background:var(--white);">
     <div class="container">
       <div class="section-header">
         <div class="label">Temario oficial</div>
@@ -237,8 +242,10 @@
     </div>
   </section>
 
+  <div class="divider"></div>
+
   <!-- CTA -->
-  <section class="section">
+  <section class="section reveal">
     <div class="container">
       <div class="cta-banner">
         <h2>¿Ya sabes qué ruta necesitas?</h2>
@@ -253,5 +260,12 @@
       <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. <a href="index.html">Volver al inicio</a></p>
     </div>
   </footer>
+
+  <script>
+  document.querySelectorAll('.reveal').forEach(el => {
+    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
+    io.observe(el);
+  });
+  </script>
 </body>
 </html>
