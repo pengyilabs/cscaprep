@@ -3,237 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preparación CSCA con Tutor — EstudiaEnChina</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Preparación CSCA — EstudiaEnChina</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box;}html{font-size:16px;}body{font-family:'Space Grotesk',sans-serif;background:#fff;color:#111;line-height:1.5;}a{color:inherit;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;mix-blend-mode:difference;}
+    nav a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:500;}nav .logo{font-weight:700;font-size:1rem;letter-spacing:-.02em;}nav .links{display:flex;gap:2rem;}
+    @media(max-width:600px){nav{padding:1rem 1.5rem;}nav .links{gap:1rem;}nav .links a{font-size:.75rem;}section{padding:4rem 1.5rem!important;}.hero{padding:2rem 1.5rem!important;}}
+    .hero{min-height:70vh;background:#111;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;position:relative;overflow:hidden;}
+    .hero .bg-char{position:absolute;top:50%;right:5%;transform:translateY(-50%);font-size:clamp(16rem,35vw,40rem);font-weight:700;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none;}
+    .hero h1{font-size:clamp(2.5rem,7vw,5.5rem);font-weight:700;line-height:.9;letter-spacing:-.04em;max-width:600px;position:relative;z-index:2;}
+    .hero h1 em{font-style:normal;color:#e63b19;}.hero .sub{margin-top:2rem;font-size:1.05rem;color:rgba(255,255,255,.5);max-width:420px;position:relative;z-index:2;}
+    .hero .cta{margin-top:2.5rem;display:flex;gap:1rem;position:relative;z-index:2;flex-wrap:wrap;}
+    .btn{padding:.9rem 2rem;font-size:.85rem;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;letter-spacing:.01em;}
+    .btn-fill{background:#e63b19;color:#fff;}.btn-fill:hover{background:#c43015;}
+    .btn-line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}.btn-line:hover{border-color:#fff;}
+    .btn-dark{background:transparent;color:#111;border:1.5px solid #ccc;}.btn-dark:hover{border-color:#111;}
+    section{padding:6rem 3rem;}
+    h2{font-size:2rem;margin-bottom:.5rem;letter-spacing:-.02em;}
+    .sub-head{color:#999;margin-bottom:2rem;font-size:.95rem;}
+    /* numbered list */
+    .num-list{list-style:none;max-width:800px;}.num-list li{display:grid;grid-template-columns:80px 1fr;gap:1.5rem;padding:2.5rem 0;border-bottom:1px solid #e5e5e5;align-items:start;}
+    .num-list li:first-child{border-top:1px solid #e5e5e5;}.num-list .n{font-size:3rem;font-weight:700;color:#ddd;line-height:1;}
+    .num-list h3{font-size:1.3rem;margin-bottom:.3rem;font-weight:700;}.num-list p{color:#666;font-size:.95rem;}
+    .num-list a{text-decoration:none;}.num-list a:hover h3{text-decoration:underline;}
+    /* feature rows */
+    .feat-row{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:4rem 0;max-width:900px;}
+    .feat-row.reverse{direction:rtl;}.feat-row.reverse>*{direction:ltr;}
+    @media(max-width:700px){.feat-row{grid-template-columns:1fr;gap:1.5rem;}.feat-row.reverse{direction:ltr;}}
+    .feat-row h3{font-size:1.3rem;margin-bottom:.5rem;}.feat-row p{color:#666;font-size:.95rem;}
+    .feat-visual{background:#fafafa;border:1px solid #eee;padding:2.5rem;text-align:center;}
+    .feat-visual .big-num{font-size:4rem;font-weight:700;color:#eee;line-height:1;}.feat-visual .big-label{font-size:.8rem;color:#999;margin-top:.3rem;text-transform:uppercase;letter-spacing:.08em;}
+    /* pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:800px;}
+    @media(max-width:700px){.pricing{grid-template-columns:1fr;}}
+    .price-col{padding:2.5rem;border:1px solid #e5e5e5;margin:-1px 0 0 -1px;}
+    .price-col.featured{background:#111;color:#fff;}.price-col.featured p{color:rgba(255,255,255,.5);}
+    .price-col h3{font-size:1.1rem;margin-bottom:.3rem;}.price-col .amt{font-size:2.5rem;font-weight:700;margin:1rem 0;}
+    .price-col .amt .cur{font-size:1rem;vertical-align:top;line-height:2;}.price-col .amt .per{font-size:.85rem;font-weight:400;color:#999;}
+    .price-col ul{list-style:none;margin:1.5rem 0;}.price-col ul li{padding:.4rem 0;font-size:.9rem;color:#666;border-bottom:1px solid #eee;}
+    .price-col.featured ul li{color:rgba(255,255,255,.6);border-bottom-color:rgba(255,255,255,.1);}
+    .price-col .btn{width:100%;text-align:center;margin-top:1rem;}
+    /* contact */
+    .contact-block{background:#111;color:#fff;padding:6rem 3rem;text-align:center;}
+    .contact-block h2{font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem;}
+    .contact-block p{color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 2rem;}
+    footer{padding:2rem 3rem;font-size:.75rem;color:#bbb;border-top:1px solid #eee;}
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="dot"></span>EstudiaEnChina</a>
-      <ul class="navbar-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#como-funciona">Cómo funciona</a></li>
-        <li><a href="rutas.html">Rutas</a></li>
-        <li><a href="#contacto" class="btn btn-primary btn-sm">Agendar sesión</a></li>
-      </ul>
+  <nav>
+    <a href="index.html" class="logo">EstudiaEnChina</a>
+    <div class="links">
+      <a href="csca-prep.html">CSCA Prep</a>
+      <a href="rutas.html">Rutas</a>
+      <a href="aliados.html">Aliados</a>
+      <a href="servicios.html">Servicios</a>
     </div>
   </nav>
 
-  <!-- HERO — Personal, tutor-led -->
-  <section class="hero dark">
-    <div class="container">
-      <div class="grid-2" style="align-items:center;gap:var(--space-xl);">
+  <section class="hero">
+    <div class="bg-char">教</div>
+    <h1>Un tutor personal<br>que te prepara<br>para el <em>CSCA</em></h1>
+    <p class="sub">Sesiones 1-a-1 en línea. Estructurado por ruta de aprendizaje. En español, desde China.</p>
+    <div class="cta">
+      <a href="#contacto" class="btn btn-fill">Agendar sesión de prueba</a>
+      <a href="rutas.html" class="btn btn-line">Ver rutas de estudio</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo funciona</h2>
+    <p class="sub-head">Tres pasos. Sin vueltas.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
         <div>
-          <div class="hero-badge animate-in">Preparación CSCA</div>
-          <h1 class="animate-in delay-1" style="font-size:clamp(2rem,4vw,3rem);">Un tutor personal<br>que te prepara<br>para el examen CSCA</h1>
-          <p class="hero-subtitle animate-in delay-2">
-            No estudies solo. Sesiones 1-a-1 en línea con una tutora que conoce el examen, adapta las clases a tu nivel y te guía por la ruta completa. En español, desde China.
-          </p>
-          <div class="hero-cta animate-in delay-3">
-            <a href="#contacto" class="btn btn-primary btn-lg">Agendar sesión de prueba</a>
-            <a href="rutas.html" class="btn btn-outline btn-lg">Ver rutas de estudio</a>
-          </div>
+          <h3>Agenda tu sesión</h3>
+          <p>Elige el horario que te convenga. Nos adaptamos a la zona horaria de LATAM. Sesiones de 60 o 90 minutos.</p>
         </div>
-        <div style="text-align:center;">
-          <div style="background:rgba(255,255,255,0.06);border-radius:var(--radius-lg);padding:var(--space-xl);backdrop-filter:blur(8px);">
-            <div style="font-size:4rem;">👩‍🏫</div>
-            <h3 class="text-white mt-sm">Tu tutora CSCA</h3>
-            <p style="color:rgba(255,255,255,0.7);margin-top:0.5rem;font-size:0.95rem;">
-              Estudia en China. Conoce el sistema desde adentro. Sabe qué preguntas vienen, qué temas pesan más y cómo prepararte de forma eficiente.
-            </p>
-            <div style="display:flex;gap:var(--space-sm);justify-content:center;margin-top:var(--space-md);flex-wrap:wrap;">
-              <span style="background:rgba(232,100,75,0.15);padding:0.3rem 0.8rem;border-radius:var(--radius-full);font-size:0.8rem;color:var(--verm-light);">Sesiones en vivo</span>
-              <span style="background:rgba(212,168,75,0.15);padding:0.3rem 0.8rem;border-radius:var(--radius-full);font-size:0.8rem;color:var(--gold-light);">En español</span>
-              <span style="background:rgba(56,178,132,0.15);padding:0.3rem 0.8rem;border-radius:var(--radius-full);font-size:0.8rem;color:var(--jade);">Personalizado</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- HOW IT WORKS -->
-  <section class="section reveal" id="como-funciona" style="background:var(--white);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Cómo funciona</div>
-        <h2>Así es una clase con nosotros</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card text-center">
-          <div style="font-size:3rem;margin-bottom:var(--space-sm);">📞</div>
-          <h4>1. Agenda tu sesión</h4>
-          <p class="mt-sm">Elige el horario que te convenga. Nos adaptamos a la zona horaria de LATAM. Sesiones de 60 o 90 minutos.</p>
-        </div>
-        <div class="card text-center">
-          <div style="font-size:3rem;margin-bottom:var(--space-sm);">📝</div>
-          <h4>2. Clase personalizada</h4>
-          <p class="mt-sm">La tutora evalúa tu nivel, identifica tus puntos débiles y trabaja contigo los temas que más necesitas. Material de práctica incluido.</p>
-        </div>
-        <div class="card text-center">
-          <div style="font-size:3rem;margin-bottom:var(--space-sm);">📈</div>
-          <h4>3. Seguimiento continuo</h4>
-          <p class="mt-sm">Después de cada sesión recibes tareas y práctica para reforzar. La tutora ajusta el plan según tu progreso.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- WHAT YOU GET -->
-  <section class="section reveal">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Qué incluye</div>
-        <h2>Cada sesión incluye</h2>
-      </div>
-      <div class="feature-split">
+      </li>
+      <li>
+        <span class="n">02</span>
         <div>
-          <ul class="checklist">
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">✓</span> Sesión 1-a-1 en video (60 o 90 min)</li>
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">✓</span> Explicación de conceptos por la tutora</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">✓</span> Práctica guiada con preguntas tipo examen</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">✓</span> Material de práctica para después de la clase</li>
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">✓</span> Seguimiento de progreso por tema</li>
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">✓</span> Soporte por WhatsApp entre sesiones</li>
-          </ul>
+          <h3>Clase personalizada</h3>
+          <p>La tutora evalúa tu nivel, identifica tus puntos débiles y trabaja contigo los temas que más necesitas. Material de práctica incluido.</p>
         </div>
-        <div style="text-align:center;">
-          <div style="background:var(--verm-glow);border-radius:var(--radius-lg);padding:var(--space-xl);display:inline-block;">
-            <div style="font-size:3rem;">🎯</div>
-            <h3 style="color:var(--vermillion);margin-top:var(--space-sm);">No es un curso grabado</h3>
-            <p style="max-width:280px;margin-top:0.5rem;">Es una tutora real que adapta cada clase a lo que tú necesitas. Si algo no lo entiende, lo explica de otra forma.</p>
-          </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Seguimiento continuo</h3>
+          <p>Después de cada sesión recibes tareas para reforzar. La tutora ajusta el plan según tu progreso.</p>
         </div>
+      </li>
+    </ul>
+  </section>
+
+  <section style="background:#fafafa;">
+    <h2>Qué incluye cada sesión</h2>
+    <p class="sub-head">No es un curso grabado. Es una tutora real.</p>
+    <div class="feat-row">
+      <div>
+        <h3>Sesión 1-a-1 en video</h3>
+        <p>60 o 90 minutos con tu tutora. Explicación de conceptos, práctica guiada con preguntas tipo examen, y resolución de dudas en tiempo real.</p>
+      </div>
+      <div class="feat-visual">
+        <div class="big-num">1:1</div>
+        <div class="big-label">Tutora a ti sola</div>
+      </div>
+    </div>
+    <div class="feat-row reverse">
+      <div>
+        <h3>Material de práctica</h3>
+        <p>Después de cada sesión recibes ejercicios y preguntas para reforzar lo aprendido. La tutora los revisa en la siguiente clase.</p>
+      </div>
+      <div class="feat-visual">
+        <div class="big-num">400+</div>
+        <div class="big-label">Preguntas disponibles</div>
+      </div>
+    </div>
+    <div class="feat-row">
+      <div>
+        <h3>Soporte entre sesiones</h3>
+        <p>¿Una duda entre clases? Escríbele a la tutora por WhatsApp. No tienes que esperar a la siguiente sesión.</p>
+      </div>
+      <div class="feat-visual">
+        <div class="big-num">24/7</div>
+        <div class="big-label">WhatsApp disponible</div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- SUBJECTS AVAILABLE -->
-  <section class="section dark reveal">
-    <div class="container">
-      <div class="section-header">
-        <div class="label" style="color:var(--verm-light);">Materias disponibles</div>
-        <h2 class="text-white">Preparación por materia</h2>
-        <p class="mt-sm">Cada sesión se enfoca en una materia. Puedes combinar según tu ruta de aprendizaje.</p>
-      </div>
-      <div class="grid-4">
-        <div class="card text-center" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <div style="font-size:2rem;margin-bottom:var(--space-sm);">📐</div>
-          <h4 class="text-white">Matemáticas</h4>
-          <p style="font-size:0.85rem;margin-top:0.3rem;">Conjuntos, funciones, geometría, probabilidad</p>
-          <span style="display:inline-block;margin-top:var(--space-sm);background:rgba(56,178,132,0.15);padding:0.2rem 0.6rem;border-radius:var(--radius-full);font-size:0.75rem;color:var(--jade);">Obligatoria para todos</span>
+  <section>
+    <h2>Materias disponibles</h2>
+    <p class="sub-head">Cada sesión se enfoca en una materia. Puedes combinar según tu ruta.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <h3>Matemáticas</h3>
+          <p>Conjuntos, funciones, geometría, probabilidad. Obligatoria para todas las rutas.</p>
         </div>
-        <div class="card text-center" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <div style="font-size:2rem;margin-bottom:var(--space-sm);">⚡</div>
-          <h4 class="text-white">Física</h4>
-          <p style="font-size:0.85rem;margin-top:0.3rem;">Mecánica, electromagnetismo, termodinámica, óptica</p>
-          <span style="display:inline-block;margin-top:var(--space-sm);background:rgba(212,168,75,0.15);padding:0.2rem 0.6rem;border-radius:var(--radius-full);font-size:0.75rem;color:var(--gold-light);">STEM, Medicina</span>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <h3>Física</h3>
+          <p>Mecánica, electromagnetismo, termodinámica, óptica, física moderna. Para rutas STEM, Ingeniería y Medicina.</p>
         </div>
-        <div class="card text-center" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <div style="font-size:2rem;margin-bottom:var(--space-sm);">🧪</div>
-          <h4 class="text-white">Química</h4>
-          <p style="font-size:0.85rem;margin-top:0.3rem;">Conceptos, propiedades, teorías, experimentos</p>
-          <span style="display:inline-block;margin-top:var(--space-sm);background:rgba(232,100,75,0.15);padding:0.2rem 0.6rem;border-radius:var(--radius-full);font-size:0.75rem;color:var(--verm-light);">Medicina, Salud</span>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Química</h3>
+          <p>Conceptos, propiedades, teorías, experimentos. Para rutas Medicina y Salud.</p>
         </div>
-        <div class="card text-center" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <div style="font-size:2rem;margin-bottom:var(--space-sm);">📖</div>
-          <h4 class="text-white">Chino (STEM / Humanidades)</h4>
-          <p style="font-size:0.85rem;margin-top:0.3rem;">Lectura, vocabulario, comprensión</p>
-          <span style="display:inline-block;margin-top:var(--space-sm);background:rgba(28,63,112,0.3);padding:0.2rem 0.6rem;border-radius:var(--radius-full);font-size:0.75rem;color:rgba(255,255,255,0.7);">Programas en chino</span>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <h3>Chino (STEM / Humanidades)</h3>
+          <p>Lectura, vocabulario, comprensión. Para programas dictados en chino.</p>
         </div>
-      </div>
-      <p class="text-center mt-lg" style="color:rgba(255,255,255,0.5);font-size:0.9rem;">
-        ¿No sabes qué materias necesitas? <a href="rutas.html" style="color:var(--verm-light);font-weight:600;">Consulta las rutas de aprendizaje</a>.
-      </p>
-    </div>
+      </li>
+    </ul>
+    <p style="color:#999;font-size:.9rem;margin-top:1.5rem;">¿No sabes qué materias necesitas? <a href="rutas.html" style="color:#e63b19;font-weight:700;">Consulta las rutas de aprendizaje</a>.</p>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- PRICING -->
-  <section class="section reveal" style="background:var(--white);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Precio</div>
-        <h2>Paquetes de sesiones</h2>
-        <p class="mt-sm">Compra sesiones individuales o paquetes con descuento. Sin suscripción, sin compromiso a largo plazo.</p>
-      </div>
-      <div class="grid-3">
-        <div class="price-card">
-          <h4>Sesión de prueba</h4>
-          <p class="text-charcoal mt-sm">Para conocernos</p>
-          <div class="price">Gratis</div>
-          <ul class="features">
-            <li><span class="check">&#10003;</span> 30 minutos</li>
-            <li><span class="check">&#10003;</span> Evaluación de nivel</li>
-            <li><span class="check">&#10003;</span> Plan de estudio sugerido</li>
-            <li><span class="check">&#10003;</span> Sin compromiso</li>
-          </ul>
-          <a href="#contacto" class="btn btn-secondary" style="width:100%;justify-content:center;">Agendar gratis</a>
-        </div>
-        <div class="price-card featured">
-          <div class="badge-featured">Más popular</div>
-          <h4>Paquete 4 sesiones</h4>
-          <p class="text-charcoal mt-sm">Para empezar a prepararte</p>
-          <div class="price"><span class="currency">$</span>XX<span class="period"> / paquete</span></div>
-          <ul class="features">
-            <li><span class="check">&#10003;</span> 4 sesiones de 60 min</li>
-            <li><span class="check">&#10003;</span> Material de práctica incluido</li>
-            <li><span class="check">&#10003;</span> Seguimiento de progreso</li>
-            <li><span class="check">&#10003;</span> Soporte WhatsApp</li>
-            <li><span class="check">&#10003;</span> Válido por 60 días</li>
-          </ul>
-          <a href="#contacto" class="btn btn-primary" style="width:100%;justify-content:center;">Comprar paquete</a>
-        </div>
-        <div class="price-card">
-          <h4>Paquete 8 sesiones</h4>
-          <p class="text-charcoal mt-sm">Preparación completa</p>
-          <div class="price"><span class="currency">$</span>XX<span class="period"> / paquete</span></div>
-          <ul class="features">
-            <li><span class="check">&#10003;</span> 8 sesiones de 90 min</li>
-            <li><span class="check">&#10003;</span> Todo lo del paquete anterior</li>
-            <li><span class="check">&#10003;</span> Simulacro final guiado</li>
-            <li><span class="check">&#10003;</span> Válido por 90 días</li>
-          </ul>
-          <a href="#contacto" class="btn btn-secondary" style="width:100%;justify-content:center;">Comprar paquete</a>
-        </div>
-      </div>
-      <p class="text-center text-charcoal mt-md" style="font-size:0.85rem;">
-        Los precios se confirman al agendar tu sesión de prueba. Pregúntale a la tutora por descuentos por ruta completa.
-      </p>
-    </div>
+  <section id="contacto" class="contact-block">
+    <h2>Empieza con una sesión de prueba</h2>
+    <p>30 minutos. Conoce a tu tutora, evalúa tu nivel y recibe un plan de estudio. Sin compromiso.</p>
+    <a href="#" class="btn btn-fill" style="font-size:.9rem;padding:1rem 2.5rem;">Agendar sesión de prueba</a>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- CTA -->
-  <section class="section reveal" id="contacto">
-    <div class="container">
-      <div class="cta-banner">
-        <h2>Empieza con una sesión de prueba gratis</h2>
-        <p>30 minutos. Conoce a tu tutora, evalúa tu nivel y recibe un plan de estudio. Sin compromiso.</p>
-        <a href="#" class="btn btn-primary btn-lg">Agendar sesión de prueba</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container text-center">
-      <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. <a href="index.html">Volver al inicio</a></p>
-    </div>
+  <footer>
+    <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs</p>
   </footer>
-
-  <script>
-  document.querySelectorAll('.reveal').forEach(el => {
-    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
-    io.observe(el);
-  });
-  </script>
 </body>
 </html>

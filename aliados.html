@@ -3,160 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sé Nuestro Aliado — EstudiaEnChina</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Aliados — EstudiaEnChina</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box;}html{font-size:16px;}body{font-family:'Space Grotesk',sans-serif;background:#fff;color:#111;line-height:1.5;}a{color:inherit;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;mix-blend-mode:difference;}
+    nav a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:500;}nav .logo{font-weight:700;font-size:1rem;letter-spacing:-.02em;}nav .links{display:flex;gap:2rem;}
+    @media(max-width:600px){nav{padding:1rem 1.5rem;}nav .links{gap:1rem;}nav .links a{font-size:.75rem;}section{padding:4rem 1.5rem!important;}.hero{padding:2rem 1.5rem!important;}}
+    .hero{min-height:100vh;background:#111;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;position:relative;overflow:hidden;}
+    .hero .bg-char{position:absolute;top:50%;right:5%;transform:translateY(-50%);font-size:clamp(16rem,35vw,40rem);font-weight:700;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none;}
+    .hero h1{font-size:clamp(2.5rem,7vw,5.5rem);font-weight:700;line-height:.9;letter-spacing:-.04em;max-width:600px;position:relative;z-index:2;}
+    .hero h1 em{font-style:normal;color:#e63b19;}.hero .sub{margin-top:2rem;font-size:1.05rem;color:rgba(255,255,255,.5);max-width:420px;position:relative;z-index:2;}
+    .hero .cta{margin-top:2.5rem;display:flex;gap:1rem;position:relative;z-index:2;flex-wrap:wrap;}
+    .btn{padding:.9rem 2rem;font-size:.85rem;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;letter-spacing:.01em;}
+    .btn-fill{background:#e63b19;color:#fff;}.btn-fill:hover{background:#c43015;}
+    .btn-line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}.btn-line:hover{border-color:#fff;}
+    section{padding:6rem 3rem;}
+    h2{font-size:2rem;margin-bottom:.5rem;letter-spacing:-.02em;}
+    .sub-head{color:#999;margin-bottom:2rem;font-size:.95rem;}
+    .num-list{list-style:none;max-width:800px;}.num-list li{display:grid;grid-template-columns:80px 1fr;gap:1.5rem;padding:2.5rem 0;border-bottom:1px solid #e5e5e5;align-items:start;}
+    .num-list li:first-child{border-top:1px solid #e5e5e5;}.num-list .n{font-size:3rem;font-weight:700;color:#ddd;line-height:1;}
+    .num-list h3{font-size:1.3rem;margin-bottom:.3rem;font-weight:700;}.num-list p{color:#666;font-size:.95rem;}
+    .why-row{display:grid;grid-template-columns:180px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid #eee;max-width:700px;}
+    .why-row:last-child{border-bottom:none;}
+    .why-row .tag{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#999;padding-top:.2rem;}
+    .why-row h3{font-size:1.1rem;margin-bottom:.3rem;}.why-row p{color:#666;font-size:.9rem;}
+    @media(max-width:600px){.why-row{grid-template-columns:1fr;}}
+    .contact-block{background:#111;color:#fff;padding:6rem 3rem;text-align:center;}
+    .contact-block h2{font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem;}
+    .contact-block p{color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 2rem;}
+    .contact-block .btn-fill{font-size:.9rem;padding:1rem 2.5rem;}
+    footer{padding:2rem 3rem;font-size:.75rem;color:#bbb;border-top:1px solid #eee;}
+    @media(max-width:600px){footer{padding:1.5rem;}.contact-block{padding:4rem 1.5rem;}}
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="dot"></span>EstudiaEnChina</a>
-      <ul class="navbar-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#programa">El programa</a></li>
-        <li><a href="#contacto" class="btn btn-primary btn-sm">Hablemos</a></li>
-      </ul>
+  <nav>
+    <a href="index.html" class="logo">EstudiaEnChina</a>
+    <div class="links">
+      <a href="csca-prep.html">CSCA Prep</a>
+      <a href="rutas.html">Rutas</a>
+      <a href="aliados.html">Aliados</a>
+      <a href="servicios.html">Servicios</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero dark">
-    <div class="container">
-      <div class="hero-badge animate-in">Programa de alianzas</div>
-      <h1 class="animate-in delay-1">Ofrece preparación CSCA<br>a tus estudiantes</h1>
-      <p class="hero-subtitle animate-in delay-2">
-        ¿Eres una agencia de estudio en el extranjero, una escuela o una universidad? Te ayudamos a estar al día con los requisitos de admisión a China y a ofrecer preparación CSCA a tus estudiantes.
-      </p>
-      <div class="hero-cta animate-in delay-3">
-        <a href="#contacto" class="btn btn-primary btn-lg">Hablemos</a>
-        <a href="#programa" class="btn btn-outline btn-lg">Ver el programa</a>
-      </div>
+  <section class="hero">
+    <div class="bg-char">伴</div>
+    <h1>Ofrece preparación<br>CSCA a tus<br><em>estudiantes</em></h1>
+    <p class="sub">Aliamos con escuelas, agencias y plataformas para que más estudiantes lleguen a China.</p>
+    <div class="cta">
+      <a href="#contacto" class="btn btn-fill">Hablemos</a>
+      <a href="#para-quien" class="btn btn-line">Más información</a>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- WHO IT'S FOR -->
-  <section class="section reveal" style="background:var(--white);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Para quién es</div>
-        <h2>Este programa es para ti si...</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card" style="border-top:4px solid var(--vermillion);">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-sm);">🏫</div>
-          <h4>Agencias de estudio en el extranjero</h4>
-          <p class="mt-sm">Ya asesoras a estudiantes para ir a China. Ahora puedes ofrecerles preparación CSCA como parte de tu servicio — con nuestro contenido y apoyo.</p>
-        </div>
-        <div class="card" style="border-top:4px solid var(--gold);">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-sm);">🎓</div>
-          <h4>Escuelas y colegios</h4>
-          <p class="mt-sm">Integra la preparación CSCA en tus programas de orientación vocacional o como servicio complementario.</p>
-        </div>
-        <div class="card" style="border-top:4px solid var(--jade);">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-sm);">🌐</div>
-          <h4>Plataformas educativas</h4>
-          <p class="mt-sm">Añade el módulo CSCA a tu oferta actual sin desarrollar contenido propio. Nosotros ponemos el material, tú pones los estudiantes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- THE PROGRAM -->
-  <section class="section reveal" id="programa">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">El programa</div>
-        <h2>¿Qué ofrecemos a nuestros aliados?</h2>
-      </div>
-      <div class="grid-2">
+  <section id="para-quien">
+    <h2>Para quién es</h2>
+    <p class="sub-head">Si trabajas con estudiantes que quieren estudiar en el exterior, esto es para ti.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
         <div>
-          <h3>Contenido y formación</h3>
-          <ul class="checklist mt-sm">
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">✓</span> Material de enseñanza CSCA actualizado</li>
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">✓</span> Rutas de aprendizaje por carrera</li>
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">✓</span> Ejemplos de exámenes y práctica</li>
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">✓</span> Formación para tus tutores/instructores</li>
-          </ul>
-
-          <h3 class="mt-lg">Apoyo operativo</h3>
-          <ul class="checklist mt-sm">
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">✓</span> Actualización constante sobre cambios en la CSCA</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">✓</span> Información sobre universidades, becas y requisitos</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">✓</span> Soporte para preguntas técnicas del examen</li>
-          </ul>
+          <h3>Agencias de estudio en el exterior</h3>
+          <p>Agrega preparación CSCA a tus servicios. Tus estudiantes reciben tutoría profesional sin que tú desarrolles el contenido.</p>
         </div>
+      </li>
+      <li>
+        <span class="n">02</span>
         <div>
-          <h3>Lo que tú aportas</h3>
-          <ul class="checklist mt-sm">
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">→</span> Estudiantes interesados en ir a China</li>
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">→</span> Infraestructura de clases (presencial u online)</li>
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">→</span> Relación directa con tus estudiantes</li>
-          </ul>
-
-          <h3 class="mt-lg">Lo que NO tienes que hacer</h3>
-          <ul class="checklist mt-sm">
-            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--ink);">✗</span> Crear contenido propio</li>
-            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--ink);">✗</span> Desarrollar una plataforma</li>
-            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--ink);">✗</span> Investigar cambios en la CSCA</li>
-          </ul>
+          <h3>Escuelas y colegios</h3>
+          <p>Ofrece a tus alumnos un programa de preparación para estudiar en China como parte de tu oferta académica complementaria.</p>
         </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Plataformas educativas</h3>
+          <p>Integra nuestro contenido y tutoría en tu plataforma. Ideal para edtechs que buscan expandir su catálogo hacia Asia.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section style="background:#fafafa;">
+    <h2>Qué recibes</h2>
+    <p class="sub-head">Nosotros ponemos el contenido y la experiencia. Tú pones el alcance.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <h3>Material de enseñanza</h3>
+          <p>Temarios completos, ejercicios, exámenes de práctica y guías de estudio. Todo en español, listo para usar.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <h3>Formación para tutores</h3>
+          <p>Capacitamos a tus tutores en el formato CSCA, metodología de enseñanza y uso del material.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Actualización constante sobre CSCA</h3>
+          <p>Monitoreamos cambios en el examen, nuevas universidades y requisitos de becas. Recibes la información al día.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <h3>Soporte técnico</h3>
+          <p>Asistencia para la integración de materiales, resolución de dudas y coordinación operativa. Estamos disponibles.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Qué aportas tú</h2>
+    <p class="sub-head">La alianza funciona porque cada parte contribuye algo distinto.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <h3>Estudiantes</h3>
+          <p>Tienes la relación directa con los estudiantes y sus familias. Nosotros los preparamos académicamente.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <h3>Infraestructura</h3>
+          <p>Plataforma, espacios, canales de comunicación. Lo que ya tienes funciona como vehículo para llegar a más personas.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Relación directa</h3>
+          <p>Confianza, cercanía y contexto local. Conoces a tus estudiantes mejor que cualquier plataforma genérica.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section style="background:#fafafa;">
+    <h2>Valor de la alianza</h2>
+    <p class="sub-head">Beneficios concretos para tu organización.</p>
+    <div class="why-row">
+      <div class="tag">Ingresos</div>
+      <div>
+        <h3>Nuevo flujo de ingresos</h3>
+        <p>Agrega un servicio de alto valor sin desarrollar contenido propio. Comisión por cada estudiante referido.</p>
+      </div>
+    </div>
+    <div class="why-row">
+      <div class="tag">Retención</div>
+      <div>
+        <h3>Mayor retención</h3>
+        <p>Ofrece algo que tus competidores no tienen. Los estudiantes se quedan más tiempo si ven un camino claro hacia China.</p>
+      </div>
+    </div>
+    <div class="why-row">
+      <div class="tag">Operación</div>
+      <div>
+        <h3>Cero desarrollo</h3>
+        <p>No necesitas crear contenido, contratar tutores de chino ni investigar el proceso CSCA. Ya está hecho.</p>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- VALUE -->
-  <section class="section dark reveal">
-    <div class="container">
-      <div class="section-header">
-        <div class="label" style="color:var(--verm-light);">Valor para tu institución</div>
-        <h2 class="text-white">¿Por qué aliarte con nosotros?</h2>
-      </div>
-      <div class="grid-3">
-        <div class="card" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <h4 class="text-white">💰 Nuevo flujo de ingresos</h4>
-          <p class="mt-sm">Ofrece preparación CSCA como servicio adicional. Margen desde el primer estudiante.</p>
-        </div>
-        <div class="card" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <h4 class="text-white">🎯 Mayor retención</h4>
-          <p class="mt-sm">Estudiantes que se preparan contigo completan el proceso contigo. Más servicios = más fidelización.</p>
-        </div>
-        <div class="card" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <h4 class="text-white">⚡ Cero desarrollo</h4>
-          <p class="mt-sm">No necesitas crear contenido ni mantener una plataforma. Nosotros lo hacemos. Tú te enfocas en tus estudiantes.</p>
-        </div>
-      </div>
-    </div>
+  <section id="contacto" class="contact-block">
+    <h2>Hablemos sobre una alianza</h2>
+    <p>Cuéntanos sobre tu organización y tus estudiantes. Diseñamos juntos un modelo que funcione para ambos.</p>
+    <a href="csca-prep.html" class="btn btn-fill">Contactar ahora</a>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- CTA -->
-  <section class="section reveal" id="contacto" style="background:var(--white);">
-    <div class="container">
-      <div class="cta-banner">
-        <h2>Hablemos sobre una alianza</h2>
-        <p>Cuéntanos sobre tu institución y cómo podemos trabajar juntos para ayudar a más estudiantes a llegar a China.</p>
-        <a href="#" class="btn btn-primary btn-lg">Contactar</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container text-center">
-      <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. <a href="index.html">Volver al inicio</a></p>
-    </div>
+  <footer>
+    <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs</p>
   </footer>
-
-  <script>
-  document.querySelectorAll('.reveal').forEach(el => {
-    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
-    io.observe(el);
-  });
-  </script>
 </body>
 </html>

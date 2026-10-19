@@ -3,153 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estudiar en China — Servicio Completo | EstudiaEnChina</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Estudiar en China — EstudiaEnChina</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box;}html{font-size:16px;}body{font-family:'Space Grotesk',sans-serif;background:#fff;color:#111;line-height:1.5;}a{color:inherit;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;mix-blend-mode:difference;}
+    nav a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:500;}nav .logo{font-weight:700;font-size:1rem;letter-spacing:-.02em;}nav .links{display:flex;gap:2rem;}
+    @media(max-width:600px){nav{padding:1rem 1.5rem;}nav .links{gap:1rem;}nav .links a{font-size:.75rem;}section{padding:4rem 1.5rem!important;}.hero{padding:2rem 1.5rem!important;}}
+    .hero{min-height:100vh;background:#111;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;position:relative;overflow:hidden;}
+    .hero .bg-char{position:absolute;top:50%;right:5%;transform:translateY(-50%);font-size:clamp(16rem,35vw,40rem);font-weight:700;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none;}
+    .hero h1{font-size:clamp(2.5rem,7vw,5.5rem);font-weight:700;line-height:.9;letter-spacing:-.04em;max-width:600px;position:relative;z-index:2;}
+    .hero h1 em{font-style:normal;color:#e63b19;}.hero .sub{margin-top:2rem;font-size:1.05rem;color:rgba(255,255,255,.5);max-width:420px;position:relative;z-index:2;}
+    .hero .cta{margin-top:2.5rem;display:flex;gap:1rem;position:relative;z-index:2;flex-wrap:wrap;}
+    .btn{padding:.9rem 2rem;font-size:.85rem;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;letter-spacing:.01em;}
+    .btn-fill{background:#e63b19;color:#fff;}.btn-fill:hover{background:#c43015;}
+    .btn-line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}.btn-line:hover{border-color:#fff;}
+    section{padding:6rem 3rem;}
+    h2{font-size:2rem;margin-bottom:.5rem;letter-spacing:-.02em;}
+    .sub-head{color:#999;margin-bottom:2rem;font-size:.95rem;}
+    .num-list{list-style:none;max-width:800px;}.num-list li{display:grid;grid-template-columns:80px 1fr;gap:1.5rem;padding:2.5rem 0;border-bottom:1px solid #e5e5e5;align-items:start;}
+    .num-list li:first-child{border-top:1px solid #e5e5e5;}.num-list .n{font-size:3rem;font-weight:700;color:#ddd;line-height:1;}
+    .num-list h3{font-size:1.3rem;margin-bottom:.3rem;font-weight:700;}.num-list p{color:#666;font-size:.95rem;}
+    .quote{max-width:700px;padding:2.5rem 0;border-top:1px solid #e5e5e5;margin-top:2rem;}
+    .quote p{font-size:1.1rem;color:#111;line-height:1.6;font-style:italic;}
+    .quote .source{font-size:.85rem;color:#999;font-style:normal;margin-top:.8rem;}
+    .contact-block{background:#111;color:#fff;padding:6rem 3rem;text-align:center;}
+    .contact-block h2{font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem;}
+    .contact-block p{color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 2rem;}
+    .contact-block .btn-fill{font-size:.9rem;padding:1rem 2.5rem;}
+    footer{padding:2rem 3rem;font-size:.75rem;color:#bbb;border-top:1px solid #eee;}
+    @media(max-width:600px){footer{padding:1.5rem;}.contact-block{padding:4rem 1.5rem;}}
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="dot"></span>EstudiaEnChina</a>
-      <ul class="navbar-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#servicio">El servicio</a></li>
-        <li><a href="#contacto" class="btn btn-primary btn-sm">Agendar consulta</a></li>
-      </ul>
+  <nav>
+    <a href="index.html" class="logo">EstudiaEnChina</a>
+    <div class="links">
+      <a href="csca-prep.html">CSCA Prep</a>
+      <a href="rutas.html">Rutas</a>
+      <a href="aliados.html">Aliados</a>
+      <a href="servicios.html">Servicios</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero dark">
-    <div class="container">
-      <div class="grid-2" style="align-items:center;gap:var(--space-xl);">
-        <div>
-          <div class="hero-badge animate-in">Servicio completo</div>
-          <h1 class="animate-in delay-1" style="font-size:clamp(2rem,4vw,3rem);">De LATAM a China:<br>nosotros te guiamos<br>en todo el camino</h1>
-          <p class="hero-subtitle animate-in delay-2">
-            No solo te preparamos para el examen CSCA. Te ayudamos a elegir universidad, aplicar a la beca, preparar los documentos y gestionar la visa. Todo con acompañamiento en español.
-          </p>
-          <div class="hero-cta animate-in delay-3">
-            <a href="#contacto" class="btn btn-primary btn-lg">Agendar consulta gratis</a>
-            <a href="#servicio" class="btn btn-outline btn-lg">Ver qué incluye</a>
-          </div>
-        </div>
-        <div style="text-align:center;">
-          <div style="background:rgba(255,255,255,0.06);border-radius:var(--radius-lg);padding:var(--space-xl);backdrop-filter:blur(8px);">
-            <div style="font-size:4rem;">🇨🇳</div>
-            <h3 class="text-white mt-sm">Estamos en China</h3>
-            <p style="color:rgba(255,255,255,0.7);margin-top:0.5rem;font-size:0.95rem;">
-              Conocemos el sistema desde adentro. Sabemos qué universidades buscan qué perfiles, cómo funcionan las becas y qué errores evitar.
-            </p>
-          </div>
-        </div>
-      </div>
+  <section class="hero">
+    <div class="bg-char">往</div>
+    <h1>De LATAM a China:<br>nosotros te<br>guíamos en<br>todo el <em>camino</em></h1>
+    <p class="sub">Desde la preparación del examen hasta tu primer día en la universidad. Acompañamiento completo.</p>
+    <div class="cta">
+      <a href="#contacto" class="btn btn-fill">Empezar mi viaje</a>
+      <a href="#proceso" class="btn btn-line">Ver el proceso</a>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- THE SERVICE -->
-  <section class="section reveal" id="servicio" style="background:var(--white);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">El servicio</div>
-        <h2>5 pasos de LATAM a una universidad en China</h2>
-      </div>
-
-      <div class="grid-2">
-        <div class="card" style="border-left:4px solid var(--vermillion);">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:var(--space-sm);">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--vermillion);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;flex-shrink:0;">1</div>
-            <h3>Diagnóstico y orientación</h3>
-          </div>
-          <p class="text-charcoal">Evaluamos tu perfil y te recomendamos universidades y programas según tu carrera y presupuesto.</p>
+  <section id="proceso">
+    <h2>El proceso en 5 pasos</h2>
+    <p class="sub-head">Te guiamos en cada etapa. Sin atajos, sin sorpresas.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <h3>Diagnóstico</h3>
+          <p>Evaluamos tu perfil académico, nivel de chino, carrera deseada y presupuesto. Te decimos exactamente qué necesitas y cuánto tiempo toma.</p>
         </div>
-        <div class="card" style="border-left:4px solid var(--gold);">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:var(--space-sm);">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;flex-shrink:0;">2</div>
-            <h3>Preparación CSCA</h3>
-          </div>
-          <p class="text-charcoal">Sesiones con tutor para preparar las materias que necesitas según tu ruta de aprendizaje.</p>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <h3>Preparación CSCA</h3>
+          <p>Tutoría personalizada para aprobar el examen CSCA. Sesiones 1-a-1, material de práctica y seguimiento continuo hasta que estés listo.</p>
         </div>
-        <div class="card" style="border-left:4px solid var(--jade);">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:var(--space-sm);">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--jade);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;flex-shrink:0;">3</div>
-            <h3>Aplicación universitaria</h3>
-          </div>
-          <p class="text-charcoal">Revisión de documentos, carta de motivación y formulario de solicitud. Paso a paso.</p>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Aplicación universitaria</h3>
+          <p>Te ayudamos a elegir universidades, preparar documentos, redactar la carta de motivación y enviar la solicitud completa.</p>
         </div>
-        <div class="card" style="border-left:4px solid var(--ink-soft);">
-          <div style="display:flex;align-items:center;gap:1rem;margin-bottom:var(--space-sm);">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--ink-soft);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;flex-shrink:0;">4</div>
-            <h3>Beca CSC y financiamiento</h3>
-          </div>
-          <p class="text-charcoal">Te ayudamos a aplicar a la beca del gobierno chino y otras becas disponibles.</p>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <h3>Beca CSC</h3>
+          <p>Te guiamos en la solicitud de la beca China Scholarship Council. Revisión de documentos, formulario y plazos.</p>
         </div>
-      </div>
-      <div class="card text-center mt-lg" style="border-top:4px solid var(--vermillion);max-width:500px;margin-left:auto;margin-right:auto;">
-        <div style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:var(--space-sm);">
-          <div style="width:40px;height:40px;border-radius:50%;background:var(--vermillion);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;flex-shrink:0;">5</div>
+      </li>
+      <li>
+        <span class="n">05</span>
+        <div>
           <h3>Visa y logística</h3>
+          <p>Tramitación de visa, seguro médico, vuelos, alojamiento. Todo lo que necesitas para llegar a China sin estrés.</p>
         </div>
-        <p class="text-charcoal">Guía para la visa estudiantil, seguro médico, vuelos y preparación cultural.</p>
-      </div>
-    </div>
+      </li>
+    </ul>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- WHAT YOU GET -->
-  <section class="section reveal">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Lo que recibes</div>
-        <h2>Todo incluido</h2>
-      </div>
-      <div class="grid-2">
+  <section style="background:#fafafa;">
+    <h2>Qué incluye el servicio</h2>
+    <p class="sub-head">Todo lo que necesitas en un solo lugar.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
         <div>
-          <ul class="checklist">
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">✓</span> Preparación CSCA con tutor</li>
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">✓</span> Orientación personalizada (sesiones 1-a-1)</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">✓</span> Revisión de documentos de aplicación</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">✓</span> Guía de becas CSC</li>
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">✓</span> Guía de visa y logística</li>
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">✓</span> Soporte por WhatsApp</li>
-          </ul>
+          <h3>Ruta CSCA completa</h3>
+          <p>Plan de estudio personalizado según tu carrera, con temarios, ejercicios y simulacros de examen.</p>
         </div>
+      </li>
+      <li>
+        <span class="n">02</span>
         <div>
-          <div class="testimonial" style="border-left-color:var(--gold);">
-            <div class="quote">"No sabía ni por dónde empezar. Me ayudaron a elegir la universidad, preparar los documentos y aplicar a la beca CSC."</div>
-            <div class="author">— Estudiante de LATAM</div>
-          </div>
+          <h3>Orientación personalizada</h3>
+          <p>Sesiones con un asesor que conoce las universidades, los programas y el proceso de admisión desde adentro.</p>
         </div>
-      </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Revisión de documentos</h3>
+          <p>Revisamos cada documento antes de enviar: traducciones, certificados, cartas de recomendación, formulario de solicitud.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <h3>Guía de becas</h3>
+          <p>Opciones de becas disponibles para estudiantes de LATAM: CSC, becas provinciales y becas universitarias.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">05</span>
+        <div>
+          <h3>Guía de visa</h3>
+          <p>Paso a paso para obtener la visa de estudiante. Documentos, formulario, cita en el consulado y seguimiento.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">06</span>
+        <div>
+          <h3>Soporte WhatsApp</h3>
+          <p>Línea directa con nuestro equipo para resolver dudas en cualquier momento del proceso. Sin tickets, sin espera.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Lo que dicen nuestros estudiantes</h2>
+    <div class="quote">
+      <p>"Yo no sabía ni por dónde empezar. EstudiaEnChina me explicó todo el proceso desde cero: qué examen necesitaba, qué documentos preparar, cómo aplicar a la beca. Hoy estoy estudiando Medicina en Pekín."</p>
+      <div class="source">— Estudiante de Colombia, actualmente en Capital Medical University</div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- CTA -->
-  <section class="section reveal" id="contacto" style="background:var(--white);">
-    <div class="container">
-      <div class="cta-banner">
-        <h2>Tu viaje a China empieza con una conversación</h2>
-        <p>Agenda una consulta gratuita de 15 minutos. Te decimos qué universidades y becas son adecuadas para ti.</p>
-        <a href="#" class="btn btn-primary btn-lg">Agendar consulta gratis</a>
-      </div>
-    </div>
+  <section id="contacto" class="contact-block">
+    <h2>Tu viaje a China empieza con una conversación</h2>
+    <p>Cuéntanos qué carrera te interesa. Te decimos qué necesitas y cómo llegar.</p>
+    <a href="csca-prep.html" class="btn btn-fill">Agendar consulta gratuita</a>
   </section>
 
-  <footer class="footer">
-    <div class="container text-center">
-      <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. <a href="index.html">Volver al inicio</a></p>
-    </div>
+  <footer>
+    <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs</p>
   </footer>
-
-  <script>
-  document.querySelectorAll('.reveal').forEach(el => {
-    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
-    io.observe(el);
-  });
-  </script>
 </body>
 </html>

@@ -3,269 +3,229 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rutas de Aprendizaje CSCA — EstudiaEnChina</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Rutas de aprendizaje — EstudiaEnChina</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+    *{margin:0;padding:0;box-sizing:border-box;}html{font-size:16px;}body{font-family:'Space Grotesk',sans-serif;background:#fff;color:#111;line-height:1.5;}a{color:inherit;}
+    nav{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;mix-blend-mode:difference;}
+    nav a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:500;}nav .logo{font-weight:700;font-size:1rem;letter-spacing:-.02em;}nav .links{display:flex;gap:2rem;}
+    @media(max-width:600px){nav{padding:1rem 1.5rem;}nav .links{gap:1rem;}nav .links a{font-size:.75rem;}section{padding:4rem 1.5rem!important;}.hero{padding:2rem 1.5rem!important;}}
+    .hero{min-height:100vh;background:#111;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:3rem;position:relative;overflow:hidden;}
+    .hero .bg-char{position:absolute;top:50%;right:5%;transform:translateY(-50%);font-size:clamp(16rem,35vw,40rem);font-weight:700;color:rgba(255,255,255,.03);line-height:1;pointer-events:none;user-select:none;}
+    .hero h1{font-size:clamp(2.5rem,7vw,5.5rem);font-weight:700;line-height:.9;letter-spacing:-.04em;max-width:600px;position:relative;z-index:2;}
+    .hero h1 em{font-style:normal;color:#e63b19;}.hero .sub{margin-top:2rem;font-size:1.05rem;color:rgba(255,255,255,.5);max-width:420px;position:relative;z-index:2;}
+    .hero .cta{margin-top:2.5rem;display:flex;gap:1rem;position:relative;z-index:2;flex-wrap:wrap;}
+    .btn{padding:.9rem 2rem;font-size:.85rem;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;letter-spacing:.01em;}
+    .btn-fill{background:#e63b19;color:#fff;}.btn-fill:hover{background:#c43015;}
+    .btn-line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}.btn-line:hover{border-color:#fff;}
+    section{padding:6rem 3rem;}
+    h2{font-size:2rem;margin-bottom:.5rem;letter-spacing:-.02em;}
+    .sub-head{color:#999;margin-bottom:2rem;font-size:.95rem;}
+    .num-list{list-style:none;max-width:800px;}.num-list li{display:grid;grid-template-columns:80px 1fr;gap:1.5rem;padding:2.5rem 0;border-bottom:1px solid #e5e5e5;align-items:start;}
+    .num-list li:first-child{border-top:1px solid #e5e5e5;}.num-list .n{font-size:3rem;font-weight:700;color:#ddd;line-height:1;}
+    .num-list h3{font-size:1.3rem;margin-bottom:.3rem;font-weight:700;}.num-list p{color:#666;font-size:.95rem;}
+    .num-list .sub-list{list-style:none;margin-top:.5rem;}.num-list .sub-list li{display:block;padding:.3rem 0;font-size:.9rem;color:#888;border:none;grid-template-columns:auto;}
+    .num-list .sub-list li::before{content:'—';margin-right:.5rem;color:#ccc;}
+    .paths{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:1000px;}
+    @media(max-width:800px){.paths{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:500px){.paths{grid-template-columns:1fr;}}
+    .path{padding:2rem;border:1px solid #e5e5e5;margin:-1px 0 0 -1px;transition:background .15s;text-decoration:none;}
+    .path:hover{background:#fafafa;}.path .letter{font-size:4rem;font-weight:700;color:#eee;line-height:1;margin-bottom:.5rem;}
+    .path h4{font-size:1rem;margin-bottom:.3rem;}.path p{font-size:.82rem;color:#888;}
+    .path .pills{margin-top:.5rem;display:flex;gap:.3rem;flex-wrap:wrap;}
+    .path .pills span{font-size:.65rem;font-weight:700;padding:.15rem .5rem;border:1px solid #ddd;border-radius:99px;color:#555;}
+    .path .meta{margin-top:.5rem;font-size:.75rem;color:#bbb;font-weight:500;}
+    .contact-block{background:#111;color:#fff;padding:6rem 3rem;text-align:center;}
+    .contact-block h2{font-size:clamp(2rem,5vw,4rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem;}
+    .contact-block p{color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 2rem;}
+    .contact-block .btn-fill{font-size:.9rem;padding:1rem 2.5rem;}
+    footer{padding:2rem 3rem;font-size:.75rem;color:#bbb;border-top:1px solid #eee;}
+    @media(max-width:600px){footer{padding:1.5rem;}.contact-block{padding:4rem 1.5rem;}}
+  </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="dot"></span>EstudiaEnChina</a>
-      <ul class="navbar-links">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#rutas">Las 4 rutas</a></li>
-        <li><a href="#temario">Temario</a></li>
-        <li><a href="csca-prep.html" class="btn btn-primary btn-sm">Empezar a prepararte</a></li>
-      </ul>
+  <nav>
+    <a href="index.html" class="logo">EstudiaEnChina</a>
+    <div class="links">
+      <a href="csca-prep.html">CSCA Prep</a>
+      <a href="rutas.html">Rutas</a>
+      <a href="aliados.html">Aliados</a>
+      <a href="servicios.html">Servicios</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero dark">
-    <div class="container">
-      <div class="hero-badge animate-in">Guía informativa</div>
-      <h1 class="animate-in delay-1">¿Qué necesitas estudiar<br>para tu carrera?</h1>
-      <p class="hero-subtitle animate-in delay-2">
-        El examen CSCA tiene 5 materias, pero no necesitas todas. Tu carrera define qué materias rindes. Aquí están las 4 rutas posibles.
-      </p>
-      <div class="hero-cta animate-in delay-3">
-        <a href="#rutas" class="btn btn-primary btn-lg">Ver las rutas</a>
-        <a href="csca-prep.html" class="btn btn-outline btn-lg">Prepararme con un tutor</a>
-      </div>
+  <section class="hero">
+    <div class="bg-char">路</div>
+    <h1>¿Qué necesitas<br>estudiar para<br>tu <em>carrera</em>?</h1>
+    <p class="sub">El CSCA tiene 5 materias. Tu ruta depende de lo que quieras estudiar en China.</p>
+    <div class="cta">
+      <a href="csca-prep.html" class="btn btn-fill">Hablar con un tutor</a>
+      <a href="#materias" class="btn btn-line">Ver materias</a>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <section id="materias">
+    <h2>Las 5 materias del CSCA</h2>
+    <p class="sub-head">Resumen rápido del formato de cada examen.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <h3>Matemáticas</h3>
+          <p>48 preguntas · 60 minutos. Conjuntos, funciones, geometría, probabilidad. Obligatoria para todas las rutas.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <h3>Física</h3>
+          <p>48 preguntas · 60 minutos. Mecánica, electromagnetismo, termodinámica, óptica. Para rutas STEM, Ingeniería y Medicina.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Química</h3>
+          <p>48 preguntas · 60 minutos. Estructura atómica, enlaces, reacciones, estequiometría. Para rutas Medicina y Salud.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <h3>Chino STEM</h3>
+          <p>40 preguntas · 60 minutos. Comprensión lectora y vocabulario científico. Para programas técnicos dictados en chino.</p>
+        </div>
+      </li>
+      <li>
+        <span class="n">05</span>
+        <div>
+          <h3>Chino Humanidades</h3>
+          <p>40 preguntas · 60 minutos. Comprensión lectora, escritura y análisis textual. Para programas de humanidades en chino.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-  <!-- QUICK OVERVIEW -->
-  <section class="section reveal" style="background:var(--white);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Vista rápida</div>
-        <h2>Las 5 materias del examen CSCA</h2>
-      </div>
-      <div class="grid-4" style="grid-template-columns: repeat(5, 1fr);">
-        <div class="card text-center" style="padding:var(--space-sm);">
-          <div style="font-size:1.8rem;">📐</div>
-          <h4 style="font-size:0.9rem;">Matemáticas</h4>
-          <p style="font-size:0.75rem;margin-top:0.2rem;">48Q · 60 min<br><b style="color:var(--vermillion);">Obligatoria para TODOS</b></p>
-        </div>
-        <div class="card text-center" style="padding:var(--space-sm);">
-          <div style="font-size:1.8rem;">⚡</div>
-          <h4 style="font-size:0.9rem;">Física</h4>
-          <p style="font-size:0.75rem;margin-top:0.2rem;">48Q · 60 min<br>STEM, Ing., Medicina</p>
-        </div>
-        <div class="card text-center" style="padding:var(--space-sm);">
-          <div style="font-size:1.8rem;">🧪</div>
-          <h4 style="font-size:0.9rem;">Química</h4>
-          <p style="font-size:0.75rem;margin-top:0.2rem;">48Q · 60 min<br>Medicina, Farmacia</p>
-        </div>
-        <div class="card text-center" style="padding:var(--space-sm);">
-          <div style="font-size:1.8rem;">📖</div>
-          <h4 style="font-size:0.9rem;">Chino STEM</h4>
-          <p style="font-size:0.75rem;margin-top:0.2rem;">80Q · 90 min<br>Carreras técnicas</p>
-        </div>
-        <div class="card text-center" style="padding:var(--space-sm);">
-          <div style="font-size:1.8rem;">📝</div>
-          <h4 style="font-size:0.9rem;">Chino Humanidades</h4>
-          <p style="font-size:0.75rem;margin-top:0.2rem;">80Q · 90 min<br>Carreras de letras</p>
-        </div>
-      </div>
-      <p class="text-center text-charcoal mt-md" style="font-size:0.9rem;">
-        Mat, Física y Química se pueden rendir en inglés o chino. Las materias de chino solo están en chino.
-      </p>
+  <section style="background:#fafafa;">
+    <h2>Las 4 rutas de aprendizaje</h2>
+    <p class="sub-head">Elige la que corresponda a tu carrera.</p>
+    <div class="paths">
+      <a href="#" class="path">
+        <div class="letter">A</div>
+        <h4>Artes y Negocios</h4>
+        <p>Economía, Derecho, Educación, Idiomas, Turismo</p>
+        <div class="pills"><span>Chino Human.</span><span>Matemáticas</span></div>
+        <div class="meta">~120 h estimadas</div>
+      </a>
+      <a href="#" class="path">
+        <div class="letter">B</div>
+        <h4>STEM e Ingeniería</h4>
+        <p>Computación, Ing. Civil, IA, Arquitectura, Robótica</p>
+        <div class="pills"><span>Chino STEM</span><span>Matemáticas</span><span>Física</span></div>
+        <div class="meta">~200 h estimadas</div>
+      </a>
+      <a href="#" class="path">
+        <div class="letter">C</div>
+        <h4>Medicina y Salud</h4>
+        <p>MBBS, Farmacia, Odontología, Enfermería</p>
+        <div class="pills"><span>Chino STEM</span><span>Matemáticas</span><span>Química</span></div>
+        <div class="meta">~200 h estimadas</div>
+      </a>
+      <a href="#" class="path">
+        <div class="letter">D</div>
+        <h4>En inglés</h4>
+        <p>Cualquier programa dictado en inglés</p>
+        <div class="pills"><span>Matemáticas</span><span>+ Fís / Quím</span></div>
+        <div class="meta">~100 h estimadas</div>
+      </a>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- THE 4 ROUTES -->
-  <section class="section reveal" id="rutas">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Las 4 rutas</div>
-        <h2>Tu carrera define tu ruta</h2>
-      </div>
-
-      <div class="grid-2">
-        <div class="card" style="border-top:4px solid var(--vermillion);">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <h3>🅰️ Artes y Negocios</h3>
-            <span style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--vermillion);">120–170 h</span>
-          </div>
-          <p class="mt-sm text-charcoal"><b>Carreras:</b> Economía, Derecho, Educación, Idiomas, Periodismo, Administración</p>
-          <div class="path-subjects mt-sm">
-            <span class="pill" style="background:var(--verm-glow);color:var(--vermillion);">Chino Humanidades</span>
-            <span class="pill" style="background:var(--gold-light);color:var(--gold);">Matemáticas</span>
-          </div>
-          <div style="margin-top:var(--space-sm);font-size:0.9rem;color:var(--charcoal);">
-            <p><b>Matemáticas:</b> Conjuntos, funciones, geometría, probabilidad · 40–54 h</p>
-            <p><b>Chino Humanidades:</b> Lectura de textos de humanidades · 80–120 h</p>
-          </div>
-        </div>
-
-        <div class="card featured" style="border-top:4px solid var(--gold);">
-          <div class="badge-featured">Más demandada</div>
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <h3>🅱️ STEM e Ingeniería</h3>
-            <span style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--gold);">150–220 h</span>
-          </div>
-          <p class="mt-sm text-charcoal"><b>Carreras:</b> Computación, Ingeniería, IA, Ciencia de datos, Arquitectura</p>
-          <div class="path-subjects mt-sm">
-            <span class="pill" style="background:var(--verm-glow);color:var(--vermillion);">Chino STEM</span>
-            <span class="pill" style="background:var(--gold-light);color:var(--gold);">Matemáticas</span>
-            <span class="pill" style="background:rgba(11,29,58,0.06);color:var(--ink);">Física</span>
-          </div>
-          <div style="margin-top:var(--space-sm);font-size:0.9rem;color:var(--charcoal);">
-            <p><b>Matemáticas:</b> 40–54 h · <b>Física:</b> Mecánica, EM, termo, óptica, moderna · 40–54 h</p>
-            <p><b>Chino STEM:</b> Lectura científica · 80–120 h</p>
-          </div>
-        </div>
-
-        <div class="card" style="border-top:4px solid var(--jade);">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <h3>🅲 Medicina y Salud</h3>
-            <span style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--jade);">160–240 h</span>
-          </div>
-          <p class="mt-sm text-charcoal"><b>Carreras:</b> MBBS, Medicina clínica, Farmacia, Odontología</p>
-          <div class="path-subjects mt-sm">
-            <span class="pill" style="background:var(--verm-glow);color:var(--vermillion);">Chino STEM</span>
-            <span class="pill" style="background:var(--gold-light);color:var(--gold);">Matemáticas</span>
-            <span class="pill" style="background:var(--jade-light);color:var(--jade);">Química</span>
-            <span class="pill" style="background:rgba(11,29,58,0.06);color:var(--ink);">Física*</span>
-          </div>
-          <div style="margin-top:var(--space-sm);font-size:0.9rem;color:var(--charcoal);">
-            <p><b>Matemáticas:</b> 40–54 h · <b>Química:</b> Conceptos, propiedades, teorías, experimentos · 48–64 h</p>
-            <p><b>Física:</b> *Opcional según universidad · <b>Chino STEM:</b> 80–120 h</p>
-          </div>
-        </div>
-
-        <div class="card" style="border-top:4px solid var(--ink-soft);">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <h3>🅳 Programas en inglés</h3>
-            <span style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--ink-soft);">40–120 h</span>
-          </div>
-          <p class="mt-sm text-charcoal"><b>Para:</b> cualquier programa dictado en inglés — la ruta más corta</p>
-          <div class="path-subjects mt-sm">
-            <span class="pill" style="background:var(--gold-light);color:var(--gold);">Matemáticas</span>
-            <span class="pill" style="background:rgba(11,29,58,0.06);color:var(--ink);">+ Física / Química</span>
-          </div>
-          <div style="margin-top:var(--space-sm);font-size:0.9rem;color:var(--charcoal);">
-            <p><b>Matemáticas:</b> 40–54 h (única obligatoria)</p>
-            <p><b>Física / Química:</b> Según la carrera · Sin materia de chino</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Shared content -->
-      <div style="background:var(--paper);border-radius:var(--radius-lg);padding:var(--space-lg);margin-top:var(--space-xl);">
-        <h3 class="text-center mb-md">Contenido compartido entre rutas</h3>
-        <div class="grid-3">
-          <div class="text-center">
-            <div class="big-stat"><div class="number" style="color:var(--vermillion);">100%</div></div>
-            <p style="font-weight:600;">Matemáticas</p>
-            <p style="font-size:0.85rem;">Todas las rutas</p>
-          </div>
-          <div class="text-center">
-            <div class="big-stat"><div class="number" style="color:var(--gold);">75%</div></div>
-            <p style="font-weight:600;">Física</p>
-            <p style="font-size:0.85rem;">Rutas B, C, D</p>
-          </div>
-          <div class="text-center">
-            <div class="big-stat"><div class="number" style="color:var(--jade);">50%</div></div>
-            <p style="font-weight:600;">Química</p>
-            <p style="font-size:0.85rem;">Rutas C, D-salud</p>
-          </div>
-        </div>
-        <p class="text-center text-charcoal mt-md" style="font-size:0.9rem;">
-          Matemáticas es el punto de partida universal. Si solo tienes tiempo para una materia, empieza por ahí.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- DETAILED SYLLABUS -->
-  <section class="section reveal" id="temario" style="background:var(--white);">
-    <div class="container">
-      <div class="section-header">
-        <div class="label">Temario oficial</div>
-        <h2>¿Qué temas vienen en cada materia?</h2>
-        <p class="mt-sm">Este es el temario completo según la CSCA oficial. Tu tutora te guía por cada tema.</p>
-      </div>
-
-      <div class="grid-2">
-        <!-- Math -->
-        <div class="card">
-          <h3>📐 Matemáticas</h3>
-          <ul class="checklist mt-sm">
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">1</span> Conjuntos e inecuaciones</li>
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">2</span> Funciones (incl. sucesiones, derivadas)</li>
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">3</span> Geometría y álgebra (analítica, vectores, complejos, espacio)</li>
-            <li><span class="icon" style="background:var(--verm-glow);color:var(--vermillion);">4</span> Probabilidad y estadística</li>
+  <section>
+    <h2>Temario por materia</h2>
+    <p class="sub-head">Contenido detallado de cada examen CSCA.</p>
+    <ul class="num-list">
+      <li>
+        <span class="n">01</span>
+        <div>
+          <h3>Matemáticas</h3>
+          <p>4 bloques temáticos principales:</p>
+          <ul class="sub-list">
+            <li>Álgebra: conjuntos, funciones, polinomios, desigualdades</li>
+            <li>Trigonometría: funciones trigonométricas, identidades, ecuaciones</li>
+            <li>Geometría: plano cartesiano, vectores, circunferencia, cónicas</li>
+            <li>Probabilidad y estadística: combinaciones, distribuciones, análisis de datos</li>
           </ul>
         </div>
-        <!-- Physics -->
-        <div class="card">
-          <h3>⚡ Física</h3>
-          <ul class="checklist mt-sm">
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">1</span> Mecánica (cinemática, Newton, energía, ondas)</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">2</span> Electromagnetismo (electrostática, circuitos, inducción)</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">3</span> Termodinámica (gas ideal, 1.ª ley)</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">4</span> Óptica (reflexión, refracción, interferencia)</li>
-            <li><span class="icon" style="background:var(--gold-light);color:var(--gold);">5</span> Física moderna (fotoeléctrico, átomo, núcleo)</li>
+      </li>
+      <li>
+        <span class="n">02</span>
+        <div>
+          <h3>Física</h3>
+          <p>5 bloques temáticos principales:</p>
+          <ul class="sub-list">
+            <li>Mecánica: cinemática, dinámica, trabajo y energía, impulso</li>
+            <li>Electromagnetismo: campos eléctricos, circuitos, inducción electromagnética</li>
+            <li>Termodinámica: leyes de la termodinámica, gases, calor y temperatura</li>
+            <li>Óptica y ondas: reflexión, refracción, interferencia, difracción</li>
+            <li>Física moderna: estructura atómica, radiactividad, efecto fotoeléctrico</li>
           </ul>
         </div>
-        <!-- Chemistry -->
-        <div class="card">
-          <h3>🧪 Química</h3>
-          <ul class="checklist mt-sm">
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">1</span> Conceptos básicos y cálculos</li>
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">2</span> Propiedades y reacciones de sustancias</li>
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">3</span> Teorías y leyes (tabla periódica, enlaces, equilibrio)</li>
-            <li><span class="icon" style="background:var(--jade-light);color:var(--jade);">4</span> Experimentación y aplicaciones</li>
+      </li>
+      <li>
+        <span class="n">03</span>
+        <div>
+          <h3>Química</h3>
+          <p>4 bloques temáticos principales:</p>
+          <ul class="sub-list">
+            <li>Estructura atómica: configuración electrónica, tabla periódica, propiedades periódicas</li>
+            <li>Enlace químico: iónico, covalente, metálico, fuerzas intermoleculares</li>
+            <li>Reacciones: ácido-base, redox, cinética, equilibrio químico</li>
+            <li>Estequiometría: cálculos molares, soluciones, rendimiento de reacción</li>
           </ul>
         </div>
-        <!-- Chinese -->
-        <div class="card">
-          <h3>📖 Chino (STEM / Humanidades)</h3>
-          <ul class="checklist mt-sm">
-            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--ink);">1</span> 识解汉字 — Reconocimiento de caracteres</li>
-            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--ink);">2</span> 选词填空 — Completar con palabras</li>
-            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--ink);">3</span> 辨析词语 — Diferenciar palabras</li>
-            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--ink);">4</span> 选词成段 — Formar párrafos</li>
-            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--ink);">5</span> 补全语句 — Completar oraciones</li>
-            <li><span class="icon" style="background:rgba(11,29,58,0.06);color:var(--ink);">6</span> 阅读理解 — Comprensión lectora</li>
+      </li>
+      <li>
+        <span class="n">04</span>
+        <div>
+          <h3>Chino STEM</h3>
+          <p>6 bloques temáticos principales:</p>
+          <ul class="sub-list">
+            <li>Comprensión lectora de textos científicos</li>
+            <li>Vocabulario técnico y terminología científica</li>
+            <li>Reconocimiento y escritura de caracteres</li>
+            <li>Expresión oral sobre temas técnicos</li>
+            <li>Gramática y estructura de oraciones</li>
+            <li>Redacción de textos informativos breves</li>
           </ul>
         </div>
-      </div>
-    </div>
+      </li>
+      <li>
+        <span class="n">05</span>
+        <div>
+          <h3>Chino Humanidades</h3>
+          <p>6 bloques temáticos principales:</p>
+          <ul class="sub-list">
+            <li>Comprensión lectora de textos narrativos y argumentativos</li>
+            <li>Vocabulario de uso cotidiano y literario</li>
+            <li>Chino clásico: selección de textos clásicos adaptados</li>
+            <li>Textos modernos: ensayos, artículos, discursos</li>
+            <li>Recursos retóricos: metáfora, paralelismo, ironía</li>
+            <li>Composición: estructura, coherencia, estilo</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- CTA -->
-  <section class="section reveal">
-    <div class="container">
-      <div class="cta-banner">
-        <h2>¿Ya sabes qué ruta necesitas?</h2>
-        <p>Agenda una sesión de prueba con tu tutora y empieza a prepararte para el examen.</p>
-        <a href="csca-prep.html" class="btn btn-primary btn-lg">Agendar sesión de prueba</a>
-      </div>
-    </div>
+  <section class="contact-block">
+    <h2>¿Ya sabes qué ruta necesitas?</h2>
+    <p>Agenda una sesión con tu tutora. Te decimos exactamente qué materias y temas necesitas para tu carrera.</p>
+    <a href="csca-prep.html" class="btn btn-fill">Agendar sesión con tu tutora</a>
   </section>
 
-  <footer class="footer">
-    <div class="container text-center">
-      <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. <a href="index.html">Volver al inicio</a></p>
-    </div>
+  <footer>
+    <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs</p>
   </footer>
-
-  <script>
-  document.querySelectorAll('.reveal').forEach(el => {
-    const io = new IntersectionObserver(([e]) => { if(e.isIntersecting) { el.classList.add('visible'); io.disconnect(); } }, {threshold:0.15});
-    io.observe(el);
-  });
-  </script>
 </body>
 </html>
