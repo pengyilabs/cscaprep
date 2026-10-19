@@ -5,152 +5,363 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EstudiaEnChina — De LATAM a una universidad en China</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Page-specific: editorial layout ── */
+    .page-hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      background: var(--ink);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
+    .page-hero .container {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    @media (max-width: 800px) {
+      .page-hero .container { grid-template-columns: 1fr; }
+    }
+    .page-hero h1 {
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+    }
+    .page-hero h1 .accent {
+      color: var(--vermillion);
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-visual .glyph {
+      font-size: 14rem;
+      font-weight: 800;
+      color: rgba(194,58,34,0.08);
+      line-height: 1;
+      font-family: var(--font-display);
+      user-select: none;
+    }
+    .hero-visual .glyph-overlay {
+      position: absolute;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--white);
+      background: var(--vermillion);
+      padding: 0.5rem 1rem;
+      bottom: 2rem;
+      right: 0;
+      letter-spacing: 0.05em;
+    }
+    /* Divider with label */
+    .labeled-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: var(--space-lg) 0;
+    }
+    .labeled-divider .line {
+      flex: 1;
+      height: 1px;
+      background: var(--paper-dark);
+    }
+    .labeled-divider .lbl {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--stone);
+      white-space: nowrap;
+    }
+    /* Asymmetric content rows */
+    .content-row {
+      display: grid;
+      grid-template-columns: 0.4fr 1fr;
+      gap: var(--space-xl);
+      padding: var(--space-xl) 0;
+      border-bottom: 1px solid var(--paper-dark);
+    }
+    .content-row:last-child { border-bottom: none; }
+    .content-row .col-label {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--stone);
+      padding-top: 0.3rem;
+    }
+    @media (max-width: 700px) {
+      .content-row { grid-template-columns: 1fr; gap: var(--space-sm); }
+    }
+    /* Service cards — horizontal, not grid */
+    .service-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .service-item {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      gap: var(--space-md);
+      align-items: center;
+      padding: var(--space-md) 0;
+      border-bottom: 1px solid var(--paper-dark);
+      transition: all 0.15s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .service-item:last-child { border-bottom: none; }
+    .service-item:hover { padding-left: var(--space-sm); }
+    .service-item .num {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--paper-dark);
+      line-height: 1;
+    }
+    .service-item:hover .num { color: var(--vermillion); }
+    .service-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+    }
+    .service-item p {
+      font-size: 0.9rem;
+      color: var(--stone);
+    }
+    .service-item .arrow {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--paper-dark);
+      transition: all 0.15s;
+    }
+    .service-item:hover .arrow {
+      color: var(--vermillion);
+      transform: translateX(4px);
+    }
+    @media (max-width: 600px) {
+      .service-item { grid-template-columns: 40px 1fr; }
+      .service-item .arrow { display: none; }
+    }
+    /* Steps — horizontal bar */
+    .steps-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin: var(--space-lg) 0;
+    }
+    .steps-bar .step-cell {
+      background: var(--white);
+      padding: var(--space-md);
+      text-align: center;
+    }
+    .steps-bar .step-cell .step-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--paper-dark);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .steps-bar .step-cell h4 {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+    .steps-bar .step-cell p {
+      font-size: 0.82rem;
+      color: var(--stone);
+    }
+    @media (max-width: 700px) {
+      .steps-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+    /* Bottom CTA — minimal */
+    .bottom-cta {
+      padding: var(--space-2xl) 0;
+      text-align: center;
+    }
+    .bottom-cta h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--space-sm);
+    }
+    .bottom-cta .sub {
+      font-size: 1.1rem;
+      color: var(--stone);
+      max-width: 450px;
+      margin: 0 auto var(--space-lg);
+    }
+  </style>
 </head>
 <body>
+  <!-- Nav — minimal, editorial -->
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="navbar-brand"><span class="dot"></span>EstudiaEnChina</a>
+      <a href="index.html" class="navbar-brand">EstudiaEnChina<span class="dot"></span></a>
       <ul class="navbar-links">
-        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="csca-prep.html">CSCA Prep</a></li>
         <li><a href="rutas.html">Rutas</a></li>
         <li><a href="aliados.html">Aliados</a></li>
-        <li><a href="csca-prep.html" class="btn btn-primary btn-sm">Empezar</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- HERO — The big picture -->
-  <section class="hero dark">
+  <!-- HERO — asymmetric, editorial -->
+  <section class="page-hero">
     <div class="container">
-      <div class="hero-badge animate-in">De Latinoamérica a China</div>
-      <h1 class="animate-in delay-1">Tu puente a una<br>universidad en China</h1>
-      <p class="hero-subtitle animate-in delay-2">
-        Te ayudamos a prepararte para el examen de admisión, elegir tu universidad, aplicar a la beca y llegar a China. Todo con acompañamiento en español, desde LATAM.
-      </p>
-      <div class="hero-cta animate-in delay-3">
-        <a href="csca-prep.html" class="btn btn-primary btn-lg">Preparación CSCA</a>
-        <a href="rutas.html" class="btn btn-outline btn-lg">Ver rutas de estudio</a>
+      <div>
+        <div class="hero-badge animate-in">De Latinoamérica a China</div>
+        <h1 class="animate-in delay-1">
+          Tu puente<br>a una<br>universidad<br>en <span class="accent">China</span>
+        </h1>
+        <p class="hero-subtitle animate-in delay-2">
+          Te ayudamos a prepararte para el examen de admisión, elegir tu universidad, aplicar a la beca y llegar a China. Acompañamiento en español, desde LATAM.
+        </p>
+        <div class="hero-cta animate-in delay-3">
+          <a href="csca-prep.html" class="btn btn-primary btn-lg">Hablar con un tutor</a>
+          <a href="rutas.html" class="btn btn-outline btn-lg">Ver rutas de estudio</a>
+        </div>
+      </div>
+      <div class="hero-visual animate-in delay-2">
+        <div class="glyph">学</div>
+        <div class="glyph-overlay">XUÉ — estudiar</div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- THE JOURNEY — what we help with -->
-  <section class="section reveal" style="background:var(--white);">
+  <!-- THE JOURNEY — horizontal steps bar -->
+  <section class="reveal">
     <div class="container">
-      <div class="section-header">
-        <div class="label">El camino</div>
-        <h2>De LATAM a China: así funciona</h2>
-        <p class="mt-sm">Estudiar en China tiene pasos. Nosotros te acompañamos en cada uno.</p>
+      <div class="labeled-divider">
+        <div class="line"></div>
+        <span class="lbl">El camino</span>
+        <div class="line"></div>
       </div>
-      <div class="grid-4" style="grid-template-columns: repeat(4, 1fr);">
-        <div class="card text-center" style="padding:var(--space-md);border-top:4px solid var(--vermillion);">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-sm);">📋</div>
-          <h4>1. Elige tu carrera</h4>
-          <p style="font-size:0.85rem;margin-top:0.3rem;">¿STEM, Medicina, Negocios, o programa en inglés? Eso define tus materias.</p>
+      <div class="steps-bar">
+        <div class="step-cell">
+          <div class="step-num">01</div>
+          <h4>Elige tu carrera</h4>
+          <p>STEM, Medicina, Negocios o inglés. Eso define tus materias CSCA.</p>
         </div>
-        <div class="card text-center" style="padding:var(--space-md);border-top:4px solid var(--gold);">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-sm);">📚</div>
-          <h4>2. Prepárate</h4>
-          <p style="font-size:0.85rem;margin-top:0.3rem;">Estudia las materias del examen CSCA con un tutor personalizado.</p>
+        <div class="step-cell">
+          <div class="step-num">02</div>
+          <h4>Prepárate</h4>
+          <p>Sesiones con tutor personalizado. Las materias que necesitas, a tu ritmo.</p>
         </div>
-        <div class="card text-center" style="padding:var(--space-md);border-top:4px solid var(--jade);">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-sm);">🏛️</div>
-          <h4>3. Aplica</h4>
-          <p style="font-size:0.85rem;margin-top:0.3rem;">Rinde el CSCA, aplica a la universidad y solicita la beca.</p>
+        <div class="step-cell">
+          <div class="step-num">03</div>
+          <h4>Aplica</h4>
+          <p>Rinde el CSCA, aplica a la universidad, solicita la beca.</p>
         </div>
-        <div class="card text-center" style="padding:var(--space-md);border-top:4px solid var(--ink-soft);">
-          <div style="font-size:2.5rem;margin-bottom:var(--space-sm);">✈️</div>
-          <h4>4. Llega a China</h4>
-          <p style="font-size:0.85rem;margin-top:0.3rem;">Visa, vuelo, adaptación. Ya estás aquí.</p>
+        <div class="step-cell">
+          <div class="step-num">04</div>
+          <h4>Llega a China</h4>
+          <p>Visa, vuelo, adaptación. Ya estás aquí.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- SERVICES — what we offer -->
-  <section class="section reveal" id="servicios">
+  <!-- SERVICES — horizontal list, not grid of cards -->
+  <section class="reveal">
     <div class="container">
-      <div class="section-header">
-        <div class="label">Nuestros servicios</div>
-        <h2>¿Qué necesitas hoy?</h2>
+      <div class="labeled-divider">
+        <div class="line"></div>
+        <span class="lbl">Servicios</span>
+        <div class="line"></div>
       </div>
-      <div class="grid-2">
-        <!-- Main service -->
-        <a href="csca-prep.html" class="card" style="border-left:4px solid var(--vermillion);cursor:pointer;">
-          <div style="display:flex;justify-content:space-between;align-items:center;">
-            <h3>🎯 Preparación CSCA con tutor</h3>
-            <span style="font-family:var(--font-display);font-weight:700;font-size:0.8rem;color:var(--vermillion);background:var(--verm-glow);padding:0.2rem 0.7rem;border-radius:var(--radius-full);">Servicio principal</span>
+      <div class="service-row">
+        <a href="csca-prep.html" class="service-item">
+          <div class="num">01</div>
+          <div>
+            <h3>Preparación CSCA con tutor</h3>
+            <p>Sesiones 1-a-1 en línea. Estructurado por ruta de aprendizaje según tu carrera. El servicio principal.</p>
           </div>
-          <p class="mt-sm">Sesiones 1-a-1 en línea con un tutor que conoce el examen CSCA. Estructurado por ruta de aprendizaje según tu carrera. El servicio que ofrecemos hoy.</p>
-          <p class="mt-sm text-vermillion" style="font-weight:600;">Desde $X USD / sesión &rarr;</p>
+          <div class="arrow">&rarr;</div>
         </a>
-        <!-- Learning paths -->
-        <a href="rutas.html" class="card" style="border-left:4px solid var(--gold);cursor:pointer;">
-          <h3>🗺️ Rutas de aprendizaje</h3>
-          <p class="mt-sm">¿Qué materias necesitas para tu carrera? Te mostramos las 4 rutas disponibles, el temario completo y qué tan largo es el camino. Información gratuita.</p>
-          <p class="mt-sm text-vermillion" style="font-weight:600;">Ver rutas &rarr;</p>
+        <a href="rutas.html" class="service-item">
+          <div class="num">02</div>
+          <div>
+            <h3>Rutas de aprendizaje</h3>
+            <p>¿Qué materias necesitas? Te mostramos las 4 rutas, el temario completo y qué tan largo es el camino.</p>
+          </div>
+          <div class="arrow">&rarr;</div>
         </a>
-        <!-- Study in China -->
-        <a href="servicios.html" class="card" style="border-left:4px solid var(--jade);cursor:pointer;">
-          <h3>🇨🇳 Estudiar en China</h3>
-          <p class="mt-sm">¿Ya tienes tu CSCA listo o necesitas ayuda con todo el proceso? Te guiamos con la aplicación, la beca y la logística de llegar a China.</p>
-          <p class="mt-sm text-vermillion" style="font-weight:600;">Ver servicio &rarr;</p>
+        <a href="servicios.html" class="service-item">
+          <div class="num">03</div>
+          <div>
+            <h3>Estudiar en China</h3>
+            <p>Aplicación, becas, visa y logística. Acompañamiento completo de principio a fin.</p>
+          </div>
+          <div class="arrow">&rarr;</div>
         </a>
-        <!-- Partners -->
-        <a href="aliados.html" class="card" style="border-left:4px solid var(--ink-soft);cursor:pointer;">
-          <h3>🤝 Sé nuestro aliado</h3>
-          <p class="mt-sm">¿Eres una escuela, agencia o universidad? Ofrece preparación CSCA a tus estudiantes con nuestro apoyo. Programa de alianzas institucionales.</p>
-          <p class="mt-sm text-vermillion" style="font-weight:600;">Ver programa &rarr;</p>
+        <a href="aliados.html" class="service-item">
+          <div class="num">04</div>
+          <div>
+            <h3>Sé nuestro aliado</h3>
+            <p>Para escuelas, agencias y universidades que quieren ofrecer CSCA prep a sus estudiantes.</p>
+          </div>
+          <div class="arrow">&rarr;</div>
         </a>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- WHY US -->
-  <section class="section dark reveal">
+  <!-- WHY US — editorial content rows -->
+  <section class="reveal">
     <div class="container">
-      <div class="section-header">
-        <div class="label" style="color:var(--verm-light);">¿Por qué nosotros?</div>
-        <h2 class="text-white">Estamos en China. Hablamos español. Conocemos el sistema.</h2>
+      <div class="labeled-divider">
+        <div class="line"></div>
+        <span class="lbl">Por qué nosotros</span>
+        <div class="line"></div>
       </div>
-      <div class="grid-3">
-        <div class="card" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <h4 class="text-white">🇪🇸 Acompañamiento en español</h4>
-          <p class="mt-sm">Todo el proceso — tutoría, documentación, soporte — en tu idioma. No necesitas inglés ni chino para empezar.</p>
+      <div class="content-row">
+        <div class="col-label">Español</div>
+        <div>
+          <h3>Todo en tu idioma</h3>
+          <p>Tutoría, documentación, soporte — todo en español. No necesitas inglés ni chino para empezar. La información oficial sobre la CSCA está en chino e inglés; nosotros la ponemos en tu idioma.</p>
         </div>
-        <div class="card" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <h4 class="text-white">🇨🇳 Desde China</h4>
-          <p class="mt-sm">Estamos aquí. Conocemos las universidades, el proceso de admisión, las becas y la vida real como estudiantes internacionales.</p>
+      </div>
+      <div class="content-row">
+        <div class="col-label">Desde China</div>
+        <div>
+          <h3>Estamos aquí, no allá</h3>
+          <p>Conocemos las universidades, el proceso de admisión, las becas y la vida real como estudiantes internacionales. Sabemos qué universidades buscan qué perfiles y qué errores evitar.</p>
         </div>
-        <div class="card" style="background:var(--ink-mid);border-color:rgba(255,255,255,0.06);">
-          <h4 class="text-white">🌎 Pensado para LATAM</h4>
-          <p class="mt-sm">No somos una plataforma genérica. Entendemos el contexto, los horarios, los desafíos y los sueños de los estudiantes latinoamericanos.</p>
+      </div>
+      <div class="content-row">
+        <div class="col-label">Para LATAM</div>
+        <div>
+          <h3>Pensado para ti</h3>
+          <p>No somos una plataforma genérica para todo el mundo. Entendemos el contexto, los horarios, los desafíos y los sueños de los estudiantes latinoamericanos que quieren llegar a China.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="divider"></div>
-
-  <!-- CTA -->
-  <section class="section reveal">
+  <!-- CTA — minimal, editorial -->
+  <section class="reveal">
     <div class="container">
-      <div class="cta-banner">
-        <h2>¿Listo para dar el primer paso?</h2>
-        <p>Agenda una consulta gratuita y te decimos exactamente qué necesitas para llegar a China.</p>
+      <div class="bottom-cta">
+        <h2>¿Listo para empezar?</h2>
+        <p class="sub">Agenda una consulta gratuita. Te decimos exactamente qué necesitas para llegar a China.</p>
         <a href="csca-prep.html" class="btn btn-primary btn-lg">Hablar con un tutor</a>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container text-center">
+    <div class="container">
       <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs. Plataforma independiente — no afiliada al CSC ni a csca.cn.</p>
     </div>
   </footer>
