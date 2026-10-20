@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chino profesional por carrera — EstudiaEnChina</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Space Grotesk',sans-serif;background:#fff;color:#111;line-height:1.5;}
+a{color:inherit;}
+em{font-style:normal;color:#e63b19;}
+nav{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;mix-blend-mode:difference;}
+nav a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:500;}
+nav .logo{font-weight:700;font-size:1rem;letter-spacing:-.02em;}
+nav .links{display:flex;gap:2rem;align-items:center;}
+nav .links a.active{color:#e63b19;font-weight:700;}
+.hero{min-height:auto;background:#111;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 3rem 4rem;position:relative;overflow:hidden;}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;letter-spacing:-.03em;max-width:800px;}
+.ghost{position:absolute;top:50%;right:5%;transform:translateY(-50%);font-size:clamp(8rem,15vw,15rem);font-weight:700;color:rgba(255,255,255,.02);}
+.sub{margin-top:1.5rem;font-size:1.05rem;color:rgba(255,255,255,.5);max-width:600px;}
+.cta{margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+.btn{padding:.9rem 2rem;font-size:.85rem;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;}
+.btn-fill{background:#e63b19;color:#fff;}
+.btn-line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}
+section{padding:6rem 3rem;}
+h2{font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:700;letter-spacing:-.02em;text-align:center;margin-bottom:.5rem;}
+.sub-head{color:#999;margin-bottom:2rem;font-size:.95rem;text-align:center;}
+.intro{max-width:800px;margin:0 auto;text-align:center;color:#666;font-size:1.05rem;}
+.career-list{max-width:900px;margin:2rem auto 0;}
+.career-row{display:grid;grid-template-columns:170px 1fr 190px;gap:2rem;align-items:start;padding:2.5rem 1.5rem;border-left:3px solid #e63b19;border-bottom:1px solid #e5e5e5;}
+.career-row:first-child{border-top:1px solid #e5e5e5;}
+.career-row .char{font-size:3.2rem;font-weight:700;line-height:1;color:#111;}
+.career-row h3{font-size:1.3rem;font-weight:700;margin-top:.6rem;letter-spacing:-.02em;}
+.career-row ul{list-style:none;}
+.career-row ul li{position:relative;padding-left:1.1rem;color:#666;font-size:.95rem;margin-bottom:.45rem;}
+.career-row ul li:before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;background:#e63b19;}
+.career-row .meta{font-size:.85rem;color:#999;line-height:1.6;}
+.career-row .hours{font-size:1.05rem;font-weight:700;color:#111;margin-bottom:.6rem;}
+.career-row .more{display:inline-block;margin-top:1rem;font-size:.85rem;font-weight:700;color:#e63b19;text-decoration:none;}
+.num-list{list-style:none;max-width:800px;margin:0 auto;}
+.num-list li{display:grid;grid-template-columns:80px 1fr;gap:1.5rem;padding:2.5rem 0;border-bottom:1px solid #e5e5e5;align-items:start;}
+.num-list li:first-child{border-top:1px solid #e5e5e5;}
+.num-list .n{font-size:3rem;font-weight:700;color:#ddd;line-height:1;}
+.num-list h3{font-size:1.3rem;margin-bottom:.3rem;font-weight:700;}
+.num-list p{color:#666;font-size:.95rem;}
+.compare{max-width:800px;margin:2rem auto 0;overflow-x:auto;}
+table{width:100%;border-collapse:collapse;font-size:.95rem;}
+th,td{border:1px solid #ddd;padding:1rem;text-align:center;}
+th{background:#f7f7f7;font-weight:700;}
+th:first-child,td:first-child{text-align:left;font-weight:500;color:#666;}
+tbody td:not(:first-child){color:#111;font-weight:500;}
+.contact-block{background:#111;color:#fff;padding:6rem 3rem;text-align:center;}
+.contact-block h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem;}
+.contact-block p{color:rgba(255,255,255,.5);max-width:500px;margin:0 auto 2rem;}
+footer{padding:2rem 3rem;font-size:.75rem;color:#bbb;border-top:1px solid #eee;}
+@media(max-width:600px){
+  nav{padding:1rem 1.5rem;}
+  nav .links{gap:1rem;}
+  nav .links a{font-size:.75rem;}
+  section{padding:4rem 1.5rem;}
+  .hero{padding:5rem 1.5rem 3rem;}
+  .career-row{grid-template-columns:1fr;gap:1.2rem;padding:2rem 1rem;}
+  .career-row .char{font-size:2.5rem;}
+  .num-list li{grid-template-columns:56px 1fr;gap:1rem;}
+  .num-list .n{font-size:2.2rem;}
+  th,td{padding:.7rem .5rem;font-size:.8rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="logo" style="color:#fff;">EstudiaEnChina</a>
+  <div class="links">
+    <a href="/csca-prep.html">CSCA Prep</a>
+    <a href="/rutas.html">Rutas</a>
+    <a href="/aliados.html">Aliados</a>
+    <a href="/servicios.html">Servicios</a>
+    <a href="/lms.html" class="active">Aprende</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <span class="ghost">语</span>
+  <h1>Chino profesional para tu <em>carrera</em></h1>
+  <p class="sub">Domina el chino técnico de tu campo. Vocabulario especializado, situaciones reales, preparado para el entorno laboral y académico en China.</p>
+  <div class="cta">
+    <a href="#carreras" class="btn btn-fill">Ver carreras disponibles</a>
+    <a href="/csca-prep.html" class="btn btn-line">Agendar consulta</a>
+  </div>
+</div>
+
+<section>
+  <h2>¿Por qué chino profesional?</h2>
+  <p class="sub-head">El chino genérico no alcanza para tu campo</p>
+  <p class="intro">Aprender chino genérico no es suficiente para estudiar o trabajar en China. Cada campo tiene su propio vocabulario, sus propias expresiones y sus propias normas de comunicación. Nuestros cursos de chino profesional te preparan para el mundo real de tu carrera.</p>
+</section>
+
+<section id="carreras">
+  <h2>4 carreras prioritarias</h2>
+  <p class="sub-head">Elige el programa según tu campo de estudio o trabajo</p>
+  <div class="career-list">
+
+    <!-- Medicina -->
+    <div class="career-row">
+      <div>
+        <div class="char">医</div>
+        <h3>Medicina</h3>
+      </div>
+      <ul>
+        <li>Vocabulario clínico, anatomía, farmacología</li>
+        <li>Comunicación con pacientes y colegas</li>
+        <li>Lectura de historias clínicas</li>
+        <li>Niveles: HSK 4–6 con módulo médico</li>
+      </ul>
+      <div class="meta">
+        <div class="hours">120 horas · 16 semanas</div>
+        <span>Presencial y en línea</span>
+        <a href="#" class="more">Más info &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Computación -->
+    <div class="career-row">
+      <div>
+        <div class="char">码</div>
+        <h3>Computación</h3>
+      </div>
+      <ul>
+        <li>Vocabulario técnico de TI, programación, IA</li>
+        <li>Documentación técnica en chino</li>
+        <li>Comunicación en equipos de desarrollo</li>
+        <li>Niveles: HSK 4–6 con módulo tech</li>
+      </ul>
+      <div class="meta">
+        <div class="hours">100 horas · 12 semanas</div>
+        <span>Presencial y en línea</span>
+        <a href="#" class="more">Más info &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Derecho -->
+    <div class="career-row">
+      <div>
+        <div class="char">法</div>
+        <h3>Derecho</h3>
+      </div>
+      <ul>
+        <li>Terminología legal china</li>
+        <li>Contratos, regulaciones, derecho corporativo</li>
+        <li>Comunicación formal y negociación</li>
+        <li>Niveles: HSK 5–6 con módulo legal</li>
+      </ul>
+      <div class="meta">
+        <div class="hours">140 horas · 18 semanas</div>
+        <span>Presencial y en línea</span>
+        <a href="#" class="more">Más info &rarr;</a>
+      </div>
+    </div>
+
+    <!-- Negocios -->
+    <div class="career-row">
+      <div>
+        <div class="char">商</div>
+        <h3>Negocios</h3>
+      </div>
+      <ul>
+        <li>Vocabulario empresarial y financiero</li>
+        <li>Presentaciones, reuniones, negociaciones</li>
+        <li>Cultura empresarial china</li>
+        <li>Niveles: HSK 4–6 con módulo business</li>
+      </ul>
+      <div class="meta">
+        <div class="hours">100 horas · 12 semanas</div>
+        <span>Presencial y en línea</span>
+        <a href="#" class="more">Más info &rarr;</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Metodología</h2>
+  <p class="sub-head">Tres pasos para dominar el chino de tu campo</p>
+  <ul class="num-list">
+    <li>
+      <span class="n">01</span>
+      <div>
+        <h3>Evaluación de nivel</h3>
+        <p>Test de ubicación para saber tu punto de partida</p>
+      </div>
+    </li>
+    <li>
+      <span class="n">02</span>
+      <div>
+        <h3>Módulo especializado</h3>
+        <p>Vocabulario y situaciones de tu campo</p>
+      </div>
+    </li>
+    <li>
+      <span class="n">03</span>
+      <div>
+        <h3>Práctica con casos reales</h3>
+        <p>Simulacros de entrevistas, presentaciones y trabajo clínico/legal/técnico</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section>
+  <h2>Compara los programas</h2>
+  <p class="sub-head">Encuentra el programa que mejor se ajusta a tu objetivo</p>
+  <div class="compare">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Medicina</th>
+          <th>Computación</th>
+          <th>Derecho</th>
+          <th>Negocios</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Duración</td>
+          <td>120 h</td>
+          <td>100 h</td>
+          <td>140 h</td>
+          <td>100 h</td>
+        </tr>
+        <tr>
+          <td>Nivel requerido</td>
+          <td>HSK 4</td>
+          <td>HSK 4</td>
+          <td>HSK 5</td>
+          <td>HSK 4</td>
+        </tr>
+        <tr>
+          <td>Certificado</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <td>Sesiones 1-a-1</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+        </tr>
+        <tr>
+          <td>Simulacros</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+          <td>✓</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<div class="contact-block">
+  <h2>¿Listo para dominar el chino de tu <em>carrera</em>?</h2>
+  <p>Agenda una consulta gratuita y encuentra el programa profesional ideal para ti.</p>
+  <a href="/csca-prep.html" class="btn btn-fill">Agendar consulta gratuita</a>
+</div>
+
+<footer>
+  <p>&copy; 2026 EstudiaEnChina. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
