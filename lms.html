@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CSCA en línea — Aprende a tu ritmo | EstudiaEnChina</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Space Grotesk',sans-serif;background:#fff;color:#111;line-height:1.5;}a{color:inherit;}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:99;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;mix-blend-mode:difference;}nav a{color:#fff;text-decoration:none;font-size:.85rem;font-weight:500;}nav .logo{font-weight:700;font-size:1rem;letter-spacing:-.02em;}nav .links{display:flex;gap:2rem;}
+/* buttons */
+.btn{padding:.9rem 2rem;font-size:.85rem;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;letter-spacing:.01em;}a.btn-fill{background:#e63b19;color:#fff;}a.btn-fill:hover{background:#c43015;}a.btn-line{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.3);}a.btn-line:hover{border-color:#fff;}
+/* hero */
+.hero{min-height:auto;background:#111;color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 3rem 4rem;position:relative;overflow:hidden;}.ghost{position:absolute;top:50%;right:5%;transform:translateY(-50%);font-size:clamp(8rem,15vw,15rem);font-weight:700;color:rgba(255,255,255,.02);line-height:1;pointer-events:none;user-select:none;}.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;letter-spacing:-.03em;max-width:800px;margin:0 auto;position:relative;z-index:2;}.hero h1 em{font-style:normal;color:#e63b19;}.hero .sub{margin-top:1.5rem;font-size:1.05rem;color:rgba(255,255,255,.5);max-width:600px;margin:1.5rem auto 0;position:relative;z-index:2;}.hero .cta{margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;position:relative;z-index:2;}
+/* sections */
+section{padding:6rem 3rem;}h2{font-size:clamp(1.3rem,2.5vw,1.8rem);font-weight:700;letter-spacing:-.02em;text-align:center;margin-bottom:.5rem;}.sub-head{color:#999;margin-bottom:2.5rem;font-size:.95rem;text-align:center;}
+/* numbered steps */
+.num-list{list-style:none;max-width:800px;margin:0 auto;}.num-list li{display:grid;grid-template-columns:80px 1fr;gap:1.5rem;padding:2.5rem 0;border-bottom:1px solid #e5e5e5;align-items:start;}.num-list li:first-child{border-top:1px solid #e5e5e5;}.num-list .n{font-size:3rem;font-weight:700;color:#ddd;line-height:1;}.num-list h3{font-size:1.2rem;margin-bottom:.3rem;font-weight:700;}.num-list p{color:#666;font-size:.95rem;}
+/* feature grid */
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;max-width:800px;margin:0 auto;}.feat{padding:2rem 2.5rem;border:1px solid #e5e5e5;margin:-1px 0 0 -1px;}.feat h3{font-size:1rem;margin-bottom:.3rem;font-weight:700;}.feat p{font-size:.85rem;color:#666;}
+/* path grid */
+.paths{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:1000px;margin:0 auto;}.path{padding:2rem;border:1px solid #e5e5e5;margin:-1px 0 0 -1px;transition:background .15s;}.path:hover{background:#fafafa;}.path .letter{font-size:4rem;font-weight:700;color:#eee;line-height:1;margin-bottom:.5rem;}.path h4{font-size:1rem;margin-bottom:.3rem;}.path p{font-size:.82rem;color:#888;}.path .pills{margin-top:.6rem;display:flex;gap:.3rem;flex-wrap:wrap;}.path .pills span{font-size:.65rem;font-weight:700;padding:.15rem .5rem;border:1px solid #ddd;border-radius:99px;color:#555;}
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:0;max-width:900px;margin:0 auto;}.plan{padding:2.5rem 2rem;border:1px solid #e5e5e5;margin:-1px 0 0 -1px;text-align:center;display:flex;flex-direction:column;}.plan .name{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#999;margin-bottom:.5rem;}.plan .price{font-size:2.5rem;font-weight:700;margin-bottom:.3rem;line-height:1;}.plan .price small{font-size:1rem;font-weight:400;color:#999;}.plan ul{list-style:none;margin:1.5rem 0 auto;text-align:left;}.plan ul li{padding:.4rem 0;font-size:.9rem;color:#666;}.plan ul li::before{content:'✓ ';color:#e63b19;font-weight:700;}.plan .btn-fill{margin-top:2rem;width:100%;text-align:center;padding:1rem 2rem;}
+/* dark CTA */
+.dark-cta{background:#111;color:#fff;padding:6rem 3rem;text-align:center;}.dark-cta h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;letter-spacing:-.03em;margin-bottom:1rem;}.dark-cta p{color:rgba(255,255,255,.5);max-width:400px;margin:0 auto 2rem;font-size:.95rem;}
+/* footer */
+footer{padding:2rem 3rem;font-size:.75rem;color:#bbb;border-top:1px solid #eee;}
+/* responsive */
+@media(max-width:600px){nav{padding:1rem 1.5rem;}nav .links{gap:1rem;}nav .links a{font-size:.75rem;}section{padding:4rem 1.5rem;}.hero{padding:5rem 1.5rem 3rem;}footer{padding:1.5rem;}.dark-cta{padding:4rem 1.5rem;}.num-list li{grid-template-columns:60px 1fr;gap:1rem;}.num-list .n{font-size:2.2rem;}.feat-grid{grid-template-columns:1fr;}.paths{grid-template-columns:1fr;}.plans{grid-template-columns:1fr;}.plan{margin:-1px 0 0;}}</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">EstudiaEnChina</a>
+  <div class="links">
+    <a href="csca-prep.html">CSCA Prep</a>
+    <a href="rutas.html">Rutas</a>
+    <a href="aliados.html">Aliados</a>
+    <a href="servicios.html">Servicios</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="ghost">学</div>
+  <h1>Aprende CSCA <em>en línea</em></h1>
+  <p class="sub">Sistema de aprendizaje con módulos, material de estudio y exámenes simulacro. A tu ritmo, desde cualquier lugar.</p>
+  <div class="cta">
+    <a href="lms-app.html#login" class="btn btn-fill">Comenzar ahora</a>
+    <a href="#plans" class="btn btn-line">Ver planes</a>
+  </div>
+</section>
+
+<!-- ¿Cómo funciona? -->
+<section>
+  <h2>¿Cómo funciona?</h2>
+  <p class="sub-head">Tres pasos para prepararte para el CSCA</p>
+  <ul class="num-list">
+    <li>
+      <span class="n">01</span>
+      <div>
+        <h3>Elige tu ruta</h3>
+        <p>Selecciona entre Artes, STEM, Medicina o Programas en inglés. Cada ruta tiene las materias que necesitas.</p>
+      </div>
+    </li>
+    <li>
+      <span class="n">02</span>
+      <div>
+        <h3>Estudia por módulos</h3>
+        <p>Cada materia está dividida en módulos con material de lectura, ejemplos resueltos y explicaciones paso a paso.</p>
+      </div>
+    </li>
+    <li>
+      <span class="n">03</span>
+      <div>
+        <h3>Practica con simulacros</h3>
+        <p>Exámenes con el mismo formato que el CSCA real: preguntas de opción múltiple con tiempo límite.</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<!-- Lo que incluye -->
+<section style="background:#fafafa;">
+  <h2>Lo que incluye</h2>
+  <p class="sub-head">Todo lo que necesitas para prepararte</p>
+  <div class="feat-grid">
+    <div class="feat">
+      <h3>Módulos por materia</h3>
+      <p>Contenido estructurado según el temario oficial del CSCA</p>
+    </div>
+    <div class="feat">
+      <h3>Exámenes simulacro</h3>
+      <p>Prueba con el formato real: 48 o 80 preguntas con tiempo</p>
+    </div>
+    <div class="feat">
+      <h3>Seguimiento de progreso</h3>
+      <p>Ve tu avance por materia y módulo</p>
+    </div>
+    <div class="feat">
+      <h3>En español</h3>
+      <p>Todo el contenido y las explicaciones en tu idioma</p>
+    </div>
+    <div class="feat">
+      <h3>Desde China</h3>
+      <p>Contenido creado por tutores que viven en China</p>
+    </div>
+    <div class="feat">
+      <h3>Acceso 24/7</h3>
+      <p>Estudia cuando quieras, desde cualquier dispositivo</p>
+    </div>
+  </div>
+</section>
+
+<!-- Las 4 rutas -->
+<section>
+  <h2>Las 4 rutas</h2>
+  <p class="sub-head">Cada ruta incluye las materias que necesitas según tu carrera</p>
+  <div class="paths">
+    <a href="rutas.html" class="path">
+      <div class="letter">A</div>
+      <h4>Artes y Negocios</h4>
+      <p>Economía, Derecho, Educación, Idiomas</p>
+      <div class="pills"><span>数 Matemáticas</span><span>文 Chino Humanidades</span></div>
+    </a>
+    <a href="rutas.html" class="path">
+      <div class="letter">B</div>
+      <h4>STEM</h4>
+      <p>Computación, Ingeniería, IA, Arquitectura</p>
+      <div class="pills"><span>数 Matemáticas</span><span>物 Física</span><span>读 Chino STEM</span></div>
+    </a>
+    <a href="rutas.html" class="path">
+      <div class="letter">C</div>
+      <h4>Medicina</h4>
+      <p>MBBS, Farmacia, Odontología</p>
+      <div class="pills"><span>数 Matemáticas</span><span>化 Química</span><span>物 Física</span><span>读 Chino STEM</span></div>
+    </a>
+    <a href="rutas.html" class="path">
+      <div class="letter">D</div>
+      <h4>En inglés</h4>
+      <p>Cualquier programa en inglés</p>
+      <div class="pills"><span>数 Matemáticas</span><span>物 Física</span><span>化 Química</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- Planes -->
+<section style="background:#fafafa;" id="plans">
+  <h2>Planes</h2>
+  <p class="sub-head">Elige el plan que mejor se adapte a tu preparación</p>
+  <div class="plans">
+    <div class="plan">
+      <div class="name">Básico</div>
+      <div class="price">$49<small>/mes</small></div>
+      <ul>
+        <li>Acceso a 1 ruta</li>
+        <li>Todos los módulos</li>
+        <li>Simulacros ilimitados</li>
+      </ul>
+      <a href="lms-app.html#login" class="btn btn-fill">Empezar</a>
+    </div>
+    <div class="plan">
+      <div class="name">Completo</div>
+      <div class="price">$89<small>/mes</small></div>
+      <ul>
+        <li>Acceso a todas las rutas</li>
+        <li>Todos los módulos</li>
+        <li>Simulacros</li>
+        <li>Seguimiento detallado</li>
+      </ul>
+      <a href="lms-app.html#login" class="btn btn-fill">Empezar</a>
+    </div>
+    <div class="plan">
+      <div class="name">Con tutor</div>
+      <div class="price">$149<small>/mes</small></div>
+      <ul>
+        <li>Todo lo del plan Completo</li>
+        <li>4 sesiones mensuales 1-a-1 con tutor</li>
+      </ul>
+      <a href="lms-app.html#login" class="btn btn-fill">Empezar</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="dark-cta">
+  <h2>¿Listo para empezar?</h2>
+  <p>Crea tu cuenta y comienza a prepararte para el CSCA hoy.</p>
+  <a href="lms-app.html#login" class="btn btn-fill">Comenzar ahora</a>
+</div>
+
+<footer>
+  <p>EstudiaEnChina.com &copy; 2026 Pengyi Labs</p>
+</footer>
+
+</body>
+</html>
